@@ -6,15 +6,15 @@
 from gimpfu import *
 import os
 
-def crop_bp_process(file_input, file_mask, hd_resize) :
+def crop_csp_process(file_input, file_mask, hd_resize) :
 
-	filename = os.path.basename(file_input)[:-4]
-	filepath = file_input[:-len(os.path.basename(file_input))]
+	filename = os.path.splitext(os.path.split(file_input)[1])[0]
+	filepath = os.path.split(file_input)[0]
 
 # Get image location
 	image = pdb.file_png_load(file_input,os.path.basename(file_input))
 # Get mask location
-	mask = pdb.file_png_load(file_mask,"mask.png")
+	mask = pdb.file_png_load(file_mask,os.path.split(file_mask)[1])
 # Open image
 	display = pdb.gimp_display_new(image);
 # Add mask to new layer over image
@@ -39,7 +39,7 @@ def crop_bp_process(file_input, file_mask, hd_resize) :
 	suffix = "_BP.png"
 	if hd_resize == 1:
 		suffix = "_BP_HD.png"
-	pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),filepath + filename + suffix, filename + suffix)
+	pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),os.path.join(filepath,filename + suffix), filename + suffix)
 	pdb.gimp_display_delete(display)
 	pdb.gimp_message("BP Cropped! Check your image folder. ;)");
 	return
@@ -64,7 +64,7 @@ register(
 		)
 	],
 	[],
-	crop_bp_process
+	crop_csp_process
 )
 	
 main()
