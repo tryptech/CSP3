@@ -36,9 +36,9 @@ def crop_bp_process(file_input, file_mask, hd_resize) :
 		reHeight = 168
 	pdb.gimp_image_scale(image,reWidth,reHeight)
 # Output image
-	suffix = " BP.png"
+	suffix = "_BP.png"
 	if hd_resize == 1:
-		suffix = " BP HD.png"
+		suffix = "_BP_HD.png"
 	pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),filepath + filename + suffix, filename + suffix)
 	pdb.gimp_display_delete(display)
 	pdb.gimp_message("BP Cropped! Check your image folder. ;)");

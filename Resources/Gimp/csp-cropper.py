@@ -36,9 +36,9 @@ def crop_csp_process(file_input, file_mask, hd_resize) :
 		reHeight = 480
 	pdb.gimp_image_scale(image,reWidth,reHeight)
 # Output image
-	suffix = " CSP.png"
+	suffix = "_CSP.png"
 	if hd_resize == 1:
-		suffix = " CSP HD.png"
+		suffix = "_CSP_HD.png"
 	pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),filepath + filename + suffix, filename + suffix)
 	pdb.gimp_display_delete(display)
 	pdb.gimp_message("CSP Cropped! Check your image folder. ;)");
