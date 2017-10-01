@@ -21,6 +21,6 @@ Z: 0.000
 Right eye iris scale:
 X: 0.900
 Y: 0.950
-Z: 0.100
+Z: 1.000
 
 Edited polygon2's UV, FitMario_BodyA.png, to fix a seam on Mario's sleeve. 
