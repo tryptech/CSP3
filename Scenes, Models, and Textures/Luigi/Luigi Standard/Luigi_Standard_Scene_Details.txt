@@ -23,4 +23,4 @@ X: 1.000
 Y: 0.900
 Z: 1.000
 
-I've added a Subdivision Surface modifier to most of the objects, barring the eyes, buttons, and overalls.
+I've separated Luigi's hands from his arms object and applied a Subdivision Surface modifier to them. His face, hat, and hair all have a Subdivision Surface modifier as well.
