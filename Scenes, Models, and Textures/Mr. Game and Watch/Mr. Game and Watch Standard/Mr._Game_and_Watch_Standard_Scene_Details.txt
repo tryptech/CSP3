@@ -1,0 +1,19 @@
+Armature scale: 
+X: 0.200
+Y: 0.200
+Z: 0.005
+
+Armature location:
+X: 0.000
+Y: -0.011
+Z: 0.000
+
+Armature.001 scale: 
+X: 0.200
+Y: 0.200
+Z: 0.001
+
+Armature.001 location:
+X: 0.000
+Y: 0.000
+Z: 0.000
