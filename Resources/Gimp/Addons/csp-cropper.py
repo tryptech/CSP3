@@ -13,15 +13,13 @@ def crop_csp_process(file_input, file_mask, hd_resize) :
 
 # Get image location
 	image = pdb.file_png_load(file_input,os.path.basename(file_input))
-# Get mask location
-	mask = pdb.file_png_load(file_mask,os.path.split(file_mask)[1])
 # Open image
 	display = pdb.gimp_display_new(image);
 # Add mask to new layer over image
 	layer_mask = pdb.gimp_file_load_layer(image,file_mask)
 	pdb.gimp_image_insert_layer(image,layer_mask,None,0)
 # Mask layer alpha to selection
-	pdb.gimp_selection_layer_alpha(layer_mask)
+	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
 	pdb.gimp_image_remove_layer(image,layer_mask)
 # Invert Selection
 	pdb.gimp_selection_invert(image)
