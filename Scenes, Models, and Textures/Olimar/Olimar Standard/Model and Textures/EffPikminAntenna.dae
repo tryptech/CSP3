@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.5.0" xmlns="http://www.collada.org/2008/03/COLLADASchema">
+	<asset>
+		<contributor>
+			<authoring_tool>BrawlBox</authoring_tool>
+		</contributor>
+		<created>2017-11-11T07:40:24Z</created>
+		<modified>2017-11-11T07:40:24Z</modified>
+		<unit meter="0.01" name="centimeter" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="eff_pikmin_antenna-image" name="eff_pikmin_antenna">
+			<init_from>
+				<ref>eff_pikmin_antenna.png</ref>
+			</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="antenna">
+			<instance_effect url="#antenna-fx" />
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="antenna-fx" name="antenna">
+			<profile_COMMON>
+				<newparam sid="eff_pikmin_antenna-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>eff_pikmin_antenna-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="eff_pikmin_antenna-sampler">
+					<sampler2D>
+						<source>eff_pikmin_antenna-surface</source>
+						<instance_image url="#eff_pikmin_antenna-image" />
+						<wrap_s>MIRROR</wrap_s>
+						<wrap_t>MIRROR</wrap_t>
+						<minfilter>LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="eff_pikmin_antenna-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_geometries>
+		<geometry id="polygon0" name="polygon0">
+			<mesh>
+				<source id="polygon0_Positions">
+					<float_array id="polygon0_PosArr" count="75">0.686425 0.183927 0.573421 0.710639 0 0.57342 0 0 0.75 0.686425 -0.183927 0.57342 0.615432 -0.355319 0.573421 0.502498 -0.502498 0.573421 0.35532 -0.615432 0.573421 0.183927 -0.686425 0.573421 0 -0.710639 0.57342 -0.183927 -0.686425 0.573421 -0.35532 -0.615432 0.573421 -0.502498 -0.502498 0.573421 -0.615432 -0.355319 0.573421 -0.686425 -0.183927 0.57342 -0.710639 0 0.57342 -0.686425 0.183927 0.573421 -0.615432 0.35532 0.573421 -0.502498 0.502498 0.57342 -0.35532 0.615432 0.57342 -0.183927 0.686425 0.573419 0 0.710639 0.573419 0.183927 0.686425 0.573419 0.35532 0.615432 0.57342 0.502498 0.502498 0.57342 0.615432 0.355319 0.573421</float_array>
+					<technique_common>
+						<accessor source="#polygon0_PosArr" count="25" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_Normals">
+					<float_array id="polygon0_NormArr" count="75">0.23293 0.062413 0.970489 0.241147 0 0.970489 0 0 1 0.23293 -0.062413 0.970489 0.208839 -0.120573 0.970489 0.170517 -0.170517 0.970489 0.120573 -0.208839 0.970489 0.062413 -0.23293 0.970489 0 -0.241147 0.970489 -0.062413 -0.23293 0.970489 -0.120573 -0.208839 0.970489 -0.170517 -0.170516 0.970489 -0.208839 -0.120573 0.970489 -0.23293 -0.062413 0.970489 -0.241147 0 0.970489 -0.23293 0.062413 0.970489 -0.208839 0.120574 0.970489 -0.170515 0.170518 0.970489 -0.120571 0.208842 0.970488 -0.062412 0.232933 0.970488 0 0.241149 0.970488 0.062412 0.232933 0.970488 0.120571 0.208842 0.970488 0.170516 0.170518 0.970489 0.208839 0.120574 0.970489</float_array>
+					<technique_common>
+						<accessor source="#polygon0_NormArr" count="25" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_UVs0">
+					<float_array id="polygon0_UVArr0" count="50">1.968885 0.25875 2.00304 -0.0006799698 1.00068 -0.0006799698 1.968885 -0.26011 1.868749 -0.50186 1.709455 -0.709455 1.50186 -0.86875 1.26011 -0.9688849 1.00068 -1.00304 0.74125 -0.9688849 0.4995 -0.86875 0.291904 -0.709455 0.13261 -0.50186 0.032474 -0.26011 -0.00168 -0.0006799698 0.032474 0.25875 0.13261 0.5005 0.291904 0.708096 0.4995 0.86739 0.74125 0.967526 1.00068 1.001681 1.26011 0.967526 1.50186 0.86739 1.709455 0.708096 1.868748 0.5005</float_array>
+					<technique_common>
+						<accessor source="#polygon0_UVArr0" count="25" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="polygon0_Vertices">
+					<input semantic="POSITION" source="#polygon0_Positions" />
+				</vertices>
+				<triangles material="antenna" count="24">
+					<input semantic="VERTEX" source="#polygon0_Vertices" offset="0" />
+					<input semantic="NORMAL" source="#polygon0_Normals" offset="1" />
+					<input semantic="TEXCOORD" source="#polygon0_UVs0" set="0" offset="2" />
+					<p>2 2 2 1 1 1 0 0 0 3 3 3 1 1 1 2 2 2 4 4 4 3 3 3 2 2 2 2 2 2 5 5 5 4 4 4 6 6 6 5 5 5 2 2 2 7 7 7 6 6 6 2 2 2 2 2 2 8 8 8 7 7 7 9 9 9 8 8 8 2 2 2 10 10 10 9 9 9 2 2 2 2 2 2 11 11 11 10 10 10 12 12 12 11 11 11 2 2 2 13 13 13 12 12 12 2 2 2 2 2 2 14 14 14 13 13 13 15 15 15 14 14 14 2 2 2 16 16 16 15 15 15 2 2 2 2 2 2 17 17 17 16 16 16 18 18 18 17 17 17 2 2 2 19 19 19 18 18 18 2 2 2 2 2 2 20 20 20 19 19 19 21 21 21 20 20 20 2 2 2 22 22 22 21 21 21 2 2 2 2 2 2 23 23 23 22 22 22 24 24 24 23 23 23 2 2 2 0 0 0 24 24 24 2 2 2</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="polygon0_Controller">
+			<skin source="#polygon0">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="polygon0_Joints">
+					<Name_array id="polygon0_JointArr" count="1">TopN</Name_array>
+					<technique_common>
+						<accessor source="#polygon0_JointArr" count="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_Matrices">
+					<float_array id="polygon0_MatArr" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#polygon0_MatArr" count="1" stride="16">
+							<param type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_Weights">
+					<float_array id="polygon0_WeightArr" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#polygon0_WeightArr" count="1">
+							<param type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#polygon0_Joints" />
+					<input semantic="INV_BIND_MATRIX" source="#polygon0_Matrices" />
+				</joints>
+				<vertex_weights count="25">
+					<input semantic="JOINT" offset="0" source="#polygon0_Joints" />
+					<input semantic="WEIGHT" offset="1" source="#polygon0_Weights" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="RootNode" name="RootNode">
+			<node id="TopN" name="TopN" sid="TopN" type="JOINT" />
+			<node id="polygon0" name="polygon0" type="NODE">
+				<instance_controller url="#polygon0_Controller">
+					<skeleton>#TopN</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="antenna" target="#antenna">
+								<bind_vertex_input semantic="TEXCOORD0" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#RootNode" />
+	</scene>
+</COLLADA>
