@@ -23,4 +23,4 @@ X: 0.370
 Y: -0.250
 Z: 0.000
 
-Auto smoothened polygon3 and polygon6.
+Auto smoothened polygon3 and polygon6. Applied a Subdivision Surface modifier to polygon43 and polygon 44, his arm ring things.
