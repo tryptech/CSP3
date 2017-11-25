@@ -22,7 +22,7 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, hd_resize) :
 		pdb.gimp_image_insert_layer(image,layer_mask,None,0)
 		
 		# Mask layer alpha to selection
-		pdb.gimp_selection_layer_alpha(layer_mask)
+		pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
 		pdb.gimp_image_remove_layer(image,layer_mask)
 		
 		# Invert Selection

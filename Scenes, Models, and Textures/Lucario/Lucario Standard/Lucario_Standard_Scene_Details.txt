@@ -1,0 +1,19 @@
+Model scale: 
+X: 0.250
+Y: 0.250
+Z: 0.250
+
+Left eye iris location:
+X: -0.05
+Y: 0.000
+Z: 0.000
+
+Left eye highlight location: 
+X: -0.02
+Y: 0.000
+Z: 0.000
+
+Notes:
+Iris and Eyes need UV Map polygon28_UVs0 or equivilant assigned for new models
+Eye Shadow overlay at fac: 0.122727 at colour 2, with colour 1: BCBCBC in hex.
+
