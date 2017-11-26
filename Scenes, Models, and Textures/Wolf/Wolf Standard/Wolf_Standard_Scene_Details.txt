@@ -12,3 +12,5 @@ Right eye highlight location:
 X: 0.2
 Y: -0.030
 Z: 0.000
+
+Auto smoothened the normals on polygon3. 
