@@ -52,3 +52,5 @@ Edited vertices on Gloves to prevent holes from appearing after subdivision.
 Edited vertices on Pockets to prevent holes from appearing after subdivision.
 Edited UVs on ScopeRubber to make texture more circular after subdivision.
 Edited UVs and vertices on Suit to clean up shading after subdivision.
+Face and Mustache from Standard Mario was used in this blend.
+Hair from Standard Mario was used for below the headband, vertices were edited on Dr Mario hair.
