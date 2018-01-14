@@ -14,3 +14,5 @@ Y: -0.030
 Z: 0.000
 
 Vertex edited part of his lag so the strap to his holster wouldn't clip through.
+
+Adjusted shoulder pads to avoid clipping.
