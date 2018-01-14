@@ -4,8 +4,8 @@ Y: 0.200
 Z: 0.200
 
 Right eye iris location:
-X: 0.350
-Y: 0.150
+X: 0.200
+Y: -0.030
 Z: 0.000 
 
 Right eye highlight location: 
