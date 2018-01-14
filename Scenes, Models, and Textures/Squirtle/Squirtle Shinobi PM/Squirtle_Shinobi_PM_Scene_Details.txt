@@ -22,3 +22,5 @@ Right eye highlight location:
 X: -0.600
 Y: -0.050
 Z: 0.000
+
+Adjusted Ninja star to be visible. 
