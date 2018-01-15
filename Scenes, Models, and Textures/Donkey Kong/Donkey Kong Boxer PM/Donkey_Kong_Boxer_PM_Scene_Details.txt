@@ -22,3 +22,5 @@ Right eye iris scale:
 X: 1.100
 Y: 1.100
 Z: 1.000
+
+Vertexed DK's legs to fit and some of the fur so it didn't clip into other parts of DK. 
