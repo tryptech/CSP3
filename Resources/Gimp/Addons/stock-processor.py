@@ -6,7 +6,7 @@
 from gimpfu import *
 import os
 
-def crop_csp_process(file_input, file_mask, hd_resize) :
+def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
 
 	filename = os.path.splitext(os.path.split(file_input)[1])[0]
 	filepath = os.path.split(file_input)[0]
@@ -23,45 +23,36 @@ def crop_csp_process(file_input, file_mask, hd_resize) :
 	pdb.gimp_image_remove_layer(image,layer_mask)
 # Apply mask
 	pdb.gimp_edit_clear(pdb.gimp_image_get_active_layer(image))
-# Select active area
+# Add crop to new layer over image
+	layer_crop = pdb.gimp_file_load_layer(image,file_crop)
+	pdb.gimp_image_insert_layer(image,layer_crop,None,0)
+# Mask layer alpha to selection
 	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
+	pdb.gimp_image_remove_layer(image,layer_crop)
+# Invert Selection
+	pdb.gimp_selection_invert(image)
 # Crop to selection
 	dimensions = pdb.gimp_selection_bounds(image)
-	iWidth = dimensions[3]-dimensions[1]
-	iHeight = dimensions[4]-dimensions[2]
-	pdb.gimp_image_crop(image,iWidth,iHeight,dimensions[1],dimensions[2])
+	pdb.gimp_image_crop(image,dimensions[3]-dimensions[1],dimensions[4]-dimensions[2],dimensions[1],dimensions[2])
 # Resize image
-	if (iWidth > iHeight):
-		reWidth = 28
-		reHeight = round((float(iHeight)/iWidth)*28)
-	elif (iWidth < iHeight):
-		reWidth = round((float(iWidth)/iHeight)*28)
-		reHeight = 28
-	else:
-		reWidth = 28
-		reHeight = 28
+	reSize = 28
 	if (hd_resize == 1):
-		if (iWidth > iHeight):
-			reWidth = 224
-			reHeight = round((float(iHeight)/iWidth)*224)
-		elif (iWidth < iHeight):
-			reWidth = round((float(iWidth)/iHeight)*224)
-			reHeight = 224
-		else:
-			reWidth = 224
-			reHeight = 224
-	pdb.gimp_image_scale(image,reWidth,reHeight)
+	    reSize = 224
+	pdb.gimp_image_scale(image,reSize,reSize)
 # Add padding
-	newWidth = 32
-	newHeight = 32
+	newSize = 32
 	if (hd_resize == 1):
-		newWidth = 256
-		newHeight = 256
-	offX = round((newWidth-reWidth)/2)
-	offY = round((newHeight-reHeight)/2)
-	pdb.gimp_image_resize(image,newWidth,newHeight,offX,offY)
+		newSize = 256
+	off = round((newSize-reSize)/2)
+	pdb.gimp_image_resize(image,newSize,newSize,off,off)
+# Clear Selection
+	pdb.gimp_selection_none(image)
+# Resize layer to new bounds
+	pdb.gimp_layer_resize_to_image_size(pdb.gimp_image_get_active_layer(image))
+# Reselect image
+	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
 # Add layer for stroke
-	stroke = pdb.gimp_layer_new(image,newWidth,newHeight,1,"stroke",100,0)
+	stroke = pdb.gimp_layer_new(image,newSize,newSize,1,"stroke",100,0)
 	pdb.gimp_image_insert_layer(image,stroke,None,1)
 # Create stroke and fill
 	strokeWidth = 1.3
@@ -73,22 +64,22 @@ def crop_csp_process(file_input, file_mask, hd_resize) :
 	pdb.gimp_context_set_brush_size(strokeWidth)
 	pdb.gimp_context_set_opacity(100)
 	pdb.gimp_edit_stroke(pdb.gimp_image_get_active_layer(image))
-	pdb.gimp_selection_none(image);
-	pdb.gimp_item_transform_2d(stroke,newWidth/2,newHeight/2,1,1,0,(newWidth/2)-0.5,(newHeight/2)-0.5)
+	pdb.gimp_selection_none(image)
+	pdb.gimp_item_transform_2d(stroke,newSize/2,newSize/2,1,1,0,(newSize/2)-0.5,(newSize/2)-0.5)
 	pdb.gimp_image_merge_visible_layers(image,1)
 # Index colors if not HD
 	if (hd_resize == 0):
 		pdb.gimp_image_convert_indexed(image,0,0,16,0,1,"")
 # Resize if HD
 	if (hd_resize == 1):
-		pdb.gimp_image_scale(image, newWidth/2,newHeight/2)
+		pdb.gimp_image_scale(image, newSize/2,newSize/2)
 # Output image
 	suffix = "_STC.png"
 	if (hd_resize == 1):
 		suffix = "_STC_HD.png"
 	pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),os.path.join(filepath,filename + suffix), filename + suffix)
 	pdb.gimp_display_delete(display)
-	pdb.gimp_message("Stock made! Check your image folder. ;)");
+	pdb.gimp_message("Stock made! Check your image folder. ;)")
 	return
 
 register(
@@ -103,6 +94,7 @@ register(
 	[
 		(PF_FILE, "file_input", "Stock Image File", None),
 		(PF_FILE, "file_mask", "Stock Mask File", None),
+		(PF_FILE, "file_crop", "Stock Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 0,
 			(
 				("SD (32x32)", 0),
