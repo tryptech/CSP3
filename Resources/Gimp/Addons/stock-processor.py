@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# GIMP Python-fu plugin to crop and resize CSPs as part of the CSP Standardization project
+# GIMP Python-fu plugin to make stock icons as part of the CSP Standardization project
 # Feedback to tryptech#8049 on Discord
 
 from gimpfu import *
@@ -88,7 +88,7 @@ register(
 	"Using a user-defined mask, crops a user-defined image to a certain size, and offers resize options. The final result is then saved with the appropriate suffix to the same folder as the source image.",
 	"tryptech",
 	"tryptech",
-	"2017",
+	"2018",
 	"<Toolbox>/Tools/Stock Processor",
 	"",
 	[
