@@ -95,8 +95,8 @@ register(
 	"<Toolbox>/Tools/Stock Processor (Batch)",
 	"",
 	[
-		(PF_DIRNAME, "file_inpath", "Input Image Folder", None),
-		(PF_DIRNAME, "file_outpath", "Output Image Folder", None),
+		(PF_DIRNAME, "file_inpath", "Input Image Folder", "/tmp"),
+		(PF_DIRNAME, "file_outpath", "Output Image Folder", "/tmp"),
 		(PF_FILE, "file_mask", "Stock Mask File", None),
 		(PF_FILE, "file_crop", "Stock Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 0,
