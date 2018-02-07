@@ -1,23 +1,27 @@
-1) Open the paths dialog (Windows - Dockable Dialogs - Paths) if it's not open already
-2) Fill the "Skin" layer with the color of the costume's skin
-3) Click on the "Eye" layer.  Go to the paths dialog and double click the "Eye" path
-4) In the right panel click "Selection from Path"
-5) Go to the "Selection" menu accross the top.  Select "Feather", set it to 10, and click "OK"
-6) Fill that selection with the base eye color
-7) Go to the "Eye Color" layer
-8) Activate the "Eye Color" path and click "Selection from Path".  Go to the "Selection" menu and "Shrink" the
+General Gimp settings (these might already be set up)
+1) Open the paths dialog [Windows - Dockable Dialogs - Paths]
+2) Ensure there's a check mark next to "Snap to Guides" [View - Snap to Guides]
+3) There may be blue dotted lines going accross the screen.  These will be used later.  Turn off their 
+visibility for now [View - Show Guides]
+
+1) Fill the "Skin" layer with the color of the costume's skin
+2) Click on the "Eye" layer.  Go to the paths dialog and double click the "Eye" path
+3) In the left panel click "Selection from Path"
+4) Go to the "Selection" menu accross the top.  Select "Feather", set it to 10, and click "OK"
+5) Fill that selection with the base eye color
+6) Go to the "Eye Color" layer
+7) Activate the "Eye Color" path and click "Selection from Path".  Go to the "Selection" menu and "Shrink" the
 selection by 10.  Then "Feather" the selection by 100
-9) Fill that selection with the color for the bottom half of Kirby's eye
-10) Click on the "Eye Color #1" layer and fill the selection with the same color
-11) Go to the "Eye Highlight" layer, activate the "Eye Highlight" path, and click "Selection from Path"
-12) "Feather" the selection by 20 and fill with the color for the highlight on the top half of the eye
-13) Go to the "Cheek" layer, activate the "Cheek" path, and click "Selection from Path"
-14) "Feather" the selection by 175.  When filling the selection, click twice not once
-15) Go the the "Layer" menu accross the top and click "Autocrop Layer'
-16) Make the "Cheek Guide" layer visible.  Ensure the "Cheek" layer is still the active layer
-17) CLick on the "Scale" tool and then click the cheek.  In the scale menu there will be an icon that resembles
+8) Fill that selection with the color for the bottom half of Kirby's eye
+9) Click on the "Eye Color #1" layer and fill the selection with the same color
+10) Go to the "Eye Highlight" layer, activate the "Eye Highlight" path, and click "Selection from Path"
+11) "Feather" the selection by 20 and fill with the color for the highlight on the top half of the eye
+12) Go to the "Cheek" layer, activate the "Cheek" path, and click "Selection from Path"
+13) "Feather" the selection by 175.  When filling the selection, click twice not once
+14) Go the the "Layer" menu accross the top and click "Autocrop Layer'
+16) Enable the guides [View - Show Guides]
+15) CLick on the "Scale" tool and then click the cheek.  In the scale menu there will be an icon that resembles
 a paperclip to the right of the two numbers.  Click it until the two halves of the icon are not joined together
-18) On the main canvas drag the corners of the "Cheek" layer so they line up with the guide.  They should
-be right on the edge of the green
-19) Click "OK" in the scale menu
-20) Make the "Cheek Guide" layer invisible
+16) On the main canvas drag the corners of the "Cheek" layer so they line up with the guide.  They should
+snap right to it
+17) Click "OK" in the scale menu
