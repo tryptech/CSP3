@@ -73,6 +73,7 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 	# Index colors if not HD
 		if (hd_resize == 0):
 			pdb.gimp_image_convert_indexed(image,0,0,16,0,1,"")
+			pdb.gimp_image_convert_rgb(image)
 	# Resize if HD
 		if (hd_resize == 1):
 			pdb.gimp_image_scale(image, newSize/2,newSize/2)
