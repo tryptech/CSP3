@@ -16,7 +16,10 @@ def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
 # Open image
 	display = pdb.gimp_display_new(image)
 # Add mask to new layer over image
-	layer_mask = pdb.gimp_file_load_layer(image,file_mask)
+	if (bool(file_mask and file_mask.strip())):
+		layer_mask = pdb.gimp_file_load_layer(image,file_mask)
+	else:
+		layer_mask = pdb.gimp_file_load_layer(image,file_crop)
 	pdb.gimp_image_insert_layer(image,layer_mask,None,0)
 # Mask layer alpha to selection
 	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
