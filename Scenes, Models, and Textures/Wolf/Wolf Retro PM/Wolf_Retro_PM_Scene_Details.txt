@@ -3,16 +3,19 @@ X: 0.200
 Y: 0.200
 Z: 0.200
 
+Model rotation:
+X: 90
+Y: 0
+Z: 0
+
 Right eye iris location:
-X: 0.350
-Y: 0.150
+X: 0.100
+Y: 0.100
 Z: 0.000 
 
 Right eye highlight location: 
-X: 0.2
+X: 0.200
 Y: -0.030
 Z: 0.000
 
-Vertex edited part of his lag so the strap to his holster wouldn't clip through.
-
-Adjusted shoulder pads to avoid clipping.
+Auto smoothened the normals on polygon3. 
