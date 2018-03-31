@@ -12,6 +12,3 @@ Right eye iris location:
 X: -0.100
 Y: 0.030
 Z: 0.000 
-
-
-Auto smooth applied to polygon0.
