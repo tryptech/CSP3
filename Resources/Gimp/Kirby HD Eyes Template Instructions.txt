@@ -1,8 +1,13 @@
 General Gimp settings (these might already be set up)
-1) Open the paths dialog [Windows - Dockable Dialogs - Paths]
-2) Ensure there's a check mark next to "Snap to Guides" [View - Snap to Guides]
-3) There may be blue dotted lines going accross the screen.  These will be used later.  Turn off their 
+1) Enable single window mode [Windows - Single-Window Mode]
+2) Open the layers dialog [Windows - Dockable Dialogs - Layers]
+3) Open the paths dialog [Windows - Dockable Dialogs - Paths]
+4) Open the toolbox [Windows - Toolbox]
+5) Open the tool options dialog [Windows - Dockable Dialogs - Tool Options]
+6) There may be blue dotted lines going accross the screen.  These will be used later.  Turn off their 
 visibility for now [View - Show Guides]
+7) Ensure there's a check mark next to "Snap to Guides" [View - Snap to Guides]
+
 
 1) Fill the "Skin" layer with the color of the costume's skin
 2) Click on the "Eye" layer.  Go to the paths dialog and double click the "Eye" path

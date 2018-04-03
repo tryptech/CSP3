@@ -1,5 +1,9 @@
 General Gimp settings (these might already be set up)
-1) Open the paths dialog [Windows - Dockable Dialogs - Paths]
+1) Enable single window mode [Windows - Single-Window Mode]
+2) Open the layers dialog [Windows - Dockable Dialogs - Layers]
+3) Open the paths dialog [Windows - Dockable Dialogs - Paths]
+4) Open the toolbox [Windows - Toolbox]
+5) Open the tool options dialog [Windows - Dockable Dialogs - Tool Options]
 
 1) Fill the "Skin" layer with the color of the costume's skin
 2) Click on the "Shadow" layer.  Go to the paths dialog and double click the "Shadow" path
@@ -9,7 +13,7 @@ General Gimp settings (these might already be set up)
 6) Go to the "Base" layer
 7) Activate the "Base" path and click "Selection from Path".  Go to the "Selection" menu and "Feather" 
 the selection by 10
-8) Fill with the color for the outer part of the eye
+8) Fill with the color for the outer part of the eye (white/light grey on default)
 9) Go to the "Base Shading" laye.  Activate the "Base" path and click "Selection from Path".  Go to the 
 "Selection" menu, "Invert" the selection, and then "Feather" the selection by 80
 10) Fill with the color for the shading on the outer eye (black highly recommended)
