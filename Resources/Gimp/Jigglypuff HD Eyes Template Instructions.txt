@@ -7,8 +7,8 @@ General Gimp settings (these might already be set up)
 
 1) Fill the "Skin" layer with the color of the costume's skin
 2) Click on the "Shadow" layer.  Go to the paths dialog and double click the "Shadow" path
-3) In the left panel click "Selection from Path"
-4) Go to the "Selection" menu accross the top.  Select "Feather", set it to 20, and click "OK"
+3) Go to the "Selection" menu accross the top.  Select "Selection from Path"
+4) Go to the "Selection" menu.  Select "Feather", set it to 20, and click "OK"
 5) Fill that selection with the color for the shading around the entire eye (black highly recommended)
 6) Go to the "Base" layer
 7) Activate the "Base" path and click "Selection from Path".  Go to the "Selection" menu and "Feather" 
@@ -17,19 +17,17 @@ the selection by 10
 9) Go to the "Base Shading" laye.  Activate the "Base" path and click "Selection from Path".  Go to the 
 "Selection" menu, "Invert" the selection, and then "Feather" the selection by 80
 10) Fill with the color for the shading on the outer eye (black highly recommended)
-11) Right click the "Base" layer and click "Alpha to Selection".  "Invert" the selection
-12) Go to the "Base Shading" layer and press "Delete" on your keyboard
-13) Go to the "Pupil Shadow" layer.  Activate the "Eye" path and click "Selection from Path". "Feather" the 
+11) Go to the "Pupil Shadow" layer.  Activate the "Eye" path and click "Selection from Path". "Feather" the 
 selection by 100
-14) Fill with the color for the shadow of the pupil (black highly recommended)
-15) Go to the "Pupil Reflect" layer.  Activate the "Eye" path and click "Selection from Path". "Feather" 
+12) Fill with the color for the shadow of the pupil (black highly recommended)
+13) Go to the "Pupil Reflect" layer.  Activate the "Eye" path and click "Selection from Path". "Feather" 
 the selection by 50
-16) Fill with the base (darkest) color of the pupil
-17) Go to the "Pupil" layer.  Activate the "Eye" path and click "Selection from Path". Fill with the same 
+14) Fill with the base (darkest) color of the pupil
+15) Go to the "Pupil" layer.  Activate the "Eye" path and click "Selection from Path". Fill with the same 
 color as Step 16
-18) Go to the "Texture" layer.  Activate the "Eye" path and click "Selection from Path". Fill with the color
+16) Go to the "Texture" layer.  Activate the "Eye" path and click "Selection from Path". Fill with the color
 for the design on the bottom half of the pupil
-19)  Go to the "Highlight Lower" layer.  Activate the "Highlight" path and click "Selection from Path". 
+17)  Go to the "Highlight Lower" layer.  Activate the "Highlight" path and click "Selection from Path". 
 "Feather" the selection by 100.  Fill with the color for the highlight in the upper left
-20)  Go to the "Highlight Upper" layer.  Activate the "Highlight" path and click "Selection from Path". 
+18)  Go to the "Highlight Upper" layer.  Activate the "Highlight" path and click "Selection from Path". 
 "Feather" the selection by 50.  Fill with the same color as Step 19

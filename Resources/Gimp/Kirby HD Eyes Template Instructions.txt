@@ -11,8 +11,8 @@ visibility for now [View - Show Guides]
 
 1) Fill the "Skin" layer with the color of the costume's skin
 2) Click on the "Eye" layer.  Go to the paths dialog and double click the "Eye" path
-3) In the left panel click "Selection from Path"
-4) Go to the "Selection" menu accross the top.  Select "Feather", set it to 10, and click "OK"
+3) Go to the "Selection" menu accross the top.  Select "Selection from Path"
+4) Go to the "Selection" menu.  Select "Feather", set it to 10, and click "OK"
 5) Fill that selection with the base eye color
 6) Go to the "Eye Color" layer
 7) Activate the "Eye Color" path and click "Selection from Path".  Go to the "Selection" menu and "Shrink" the
