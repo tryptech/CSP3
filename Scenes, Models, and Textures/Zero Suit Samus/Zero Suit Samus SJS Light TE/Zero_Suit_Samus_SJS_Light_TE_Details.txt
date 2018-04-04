@@ -22,3 +22,5 @@ Right eye highlight location:
 X: 0.150
 Y: 0.000
 Z: 0.000
+
+Note: For stocks the actual body used is the Fusion one, this is for consistency across both costumes.
