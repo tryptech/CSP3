@@ -83,8 +83,8 @@ register(
 	[
 		(PF_DIRNAME, "file_inpath", "Input Image Folder", "/tmp"),
 		(PF_DIRNAME, "file_outpath", "Output Image Folder", "/tmp"),
-		(PF_FILE, "file_bp_mask", "BP Mask File", None),
-		(PF_FILE, "file_csp_mask", "CSP Mask File", None),
+		(PF_FILE, "file_bp_mask", "BP Crop File", None),
+		(PF_FILE, "file_csp_mask", "CSP Crop File", None),
 		(PF_TOGGLE, "hd_resize", "Include HD assets: ", 1)
 	],
 	[],

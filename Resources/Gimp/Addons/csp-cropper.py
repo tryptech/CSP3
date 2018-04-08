@@ -53,7 +53,7 @@ register(
 	"",
 	[
 		(PF_FILE, "file_input", "CSP Image File", None),
-		(PF_FILE, "file_mask", "CSP Mask File", None),
+		(PF_FILE, "file_mask", "CSP Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 0,
 			(
 				("SD (128x160)", 0),

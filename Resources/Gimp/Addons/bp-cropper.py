@@ -53,7 +53,7 @@ register(
 	"",
 	[
 		(PF_FILE, "file_input", "BP Image File", None),
-		(PF_FILE, "file_mask", "BP Mask File", None),
+		(PF_FILE, "file_mask", "BP Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 0,
 			(
 				("SD (48x56)", 0),
