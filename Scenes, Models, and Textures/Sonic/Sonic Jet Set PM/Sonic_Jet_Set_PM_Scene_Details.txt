@@ -37,3 +37,5 @@ Right eye highlight location:
 X: -0.100
 Y: 0.000
 Z: 0.000
+
+Note: texture FitSonicEnv01 affects the render's color, but has little or no bearing in-game due to how the material works.
