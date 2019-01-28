@@ -1,9 +1,0 @@
-This uses the LegacyTE order, which is a bit different from other versions.
-
-FitGanon has a trident from Hyrule Warriors 3DS imported by Large Leader.
-
-Pose made by Flambo.
-
-Cape textures by Aghanim
-
-All other textures were made by Layell.
