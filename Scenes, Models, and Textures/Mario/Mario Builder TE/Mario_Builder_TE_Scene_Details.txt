@@ -1,0 +1,54 @@
+Model scale:
+
+X: 0.200
+
+Y: 0.200
+
+Z: 0.200
+
+
+
+Left eye iris location:
+
+X: 0.220
+
+Y: -0.020
+
+Z: 0.000
+
+
+
+Left eye iris scale:
+
+X: 0.900
+
+Y: 1.000
+
+Z: 1.000
+
+
+
+Right eye iris location:
+
+X: 0.080
+
+Y: 0.000
+
+Z: 0.000
+
+
+
+Right eye iris scale:
+
+X: 0.900
+
+Y: 1.000
+
+Z: 1.000
+
+
+
+Edited polygon2's UV, FitMario_BodyA.png, to fix a seam on Mario's sleeve. 
+Duplicated polygon2 to separate the mustache and arms for stocks.
+Adjusted position of knuckle bumps on polygon2.001 to prevent holes from appearing after subdivision.
+Merged meshes of polygon18 and polygon19.

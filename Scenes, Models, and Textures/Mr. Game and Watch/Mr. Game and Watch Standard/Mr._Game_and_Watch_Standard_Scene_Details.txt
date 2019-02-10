@@ -44,19 +44,39 @@ Costume 6:
 Main: 63FFFF00
 Outline: 39A5A500
 
-Costume 7: 
+Costume 7:
+Main: CDCFC200
+Outline: 18539400
+
+Costume 8:
+Main: E5703C00
+Outline: 8F2D2D00
+
+Costume 9:
+Main: 86824500
+Outline: 333D2000
+
+Costume 10:
+Main: 6C1C3200
+Outline: 9C737E00
+
+Costume 11:
+Main: 442C1600
+Outline: 96856400
+
+Costume 12: 
 Main: C3C3C300
 Outline: 55555500
 
-Costume 8: 
+Costume 13: 
 Main: FF8CFF00
 Outline: 8C4A8C00
 
-Costume 9:
+Costume 14:
 Main: 9070E000
 Outline: C6C6C600
 
-Costume 10:  
+Costume 15:  
 Main: 40937E00
 Outline: C1F2E100
 
