@@ -1,6 +1,0 @@
-Hey, Icezer here. Currently due to an error with my blender program,
-you will have to make the stock layer yourself.
-
-I have included a stock head render as reference.
-
-If you need guidance, please check this video. https://youtu.be/80MUrjwdiLE?t=29m10s
