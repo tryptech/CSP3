@@ -7,3 +7,5 @@ Model rotation:
 X: 90
 Y: 0
 Z: 16
+
+Vest and pads originally polished by Spigel.
