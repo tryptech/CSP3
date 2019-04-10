@@ -19,10 +19,7 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 		# Open image
 		# display = pdb.gimp_display_new(image)
 	# Add mask to new layer over image
-		if (bool(file_mask and file_mask.strip())):
-			layer_mask = pdb.gimp_file_load_layer(image,file_mask)
-		else:
-			layer_mask = pdb.gimp_file_load_layer(image,file_crop)
+		layer_mask = pdb.gimp_file_load_layer(image,file_mask)
 		pdb.gimp_image_insert_layer(image,layer_mask,None,0)
 	# Mask layer alpha to selection
 		pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
@@ -69,7 +66,6 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 		pdb.gimp_context_set_brush("2. Hardness 100")
 		pdb.gimp_context_set_brush_size(strokeWidth)
 		pdb.gimp_context_set_opacity(100)
-		pdb.gimp_context_set_brush_hardness(1.0)
 		pdb.gimp_edit_stroke(pdb.gimp_image_get_active_layer(image))
 		pdb.gimp_selection_none(image)
 		pdb.gimp_item_transform_2d(stroke,newSize/2,newSize/2,1,1,0,(newSize/2)-0.5,(newSize/2)-0.5)
@@ -78,6 +74,10 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 		if (hd_resize == 0):
 			pdb.gimp_image_convert_indexed(image,0,0,16,0,1,"")
 			pdb.gimp_image_convert_rgb(image)
+	# Index colors if not HD (colorsmash)
+		if (hd_resize == 2):
+			pdb.gimp_image_convert_indexed(image,0,0,256,0,1,"")
+			pdb.gimp_image_convert_rgb(image)			
 	# Resize if HD
 		if (hd_resize == 1):
 			pdb.gimp_image_scale(image, newSize/2,newSize/2)
@@ -87,6 +87,7 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 			suffix = "_STC_HD.png"
 		pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),os.path.join(file_outpath,filename + suffix), filename + suffix)
 		pdb.gimp_image_delete(image)
+	pdb.gimp_message("Stocks made! Check your image folder. :D )
 	return
 
 register(
@@ -103,9 +104,10 @@ register(
 		(PF_DIRNAME, "file_outpath", "Output Image Folder", "/tmp"),
 		(PF_FILE, "file_mask", "Stock Mask File", None),
 		(PF_FILE, "file_crop", "Stock Crop File", None),
-		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 0,
+		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 2,
 			(
-				("SD (32x32)", 0),
+				("SD: Color Smash (32x32)", 2),
+				("SD: C14 Format (32x32)", 0),
 				("HD (128x128)", 1)
 			)
 		)
