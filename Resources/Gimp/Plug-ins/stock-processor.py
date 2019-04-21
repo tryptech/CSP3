@@ -104,7 +104,7 @@ register(
 		(PF_FILE, "file_crop", "Stock Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 2,
 			(
-				("SD: Color Smash (32x32)", 2),
+				("SD: Color Smash Ready (32x32)", 2),
 				("SD: C14 Format (32x32)", 0),
 				("HD (128x128)", 1)
 			)
