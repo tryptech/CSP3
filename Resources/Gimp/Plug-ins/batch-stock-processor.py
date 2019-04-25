@@ -107,7 +107,7 @@ register(
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 2,
 			(
 				("SD: Color Smash Ready (32x32)", 2),
-				("SD: C14 Format (32x32)", 0),
+				("SD: CI4 Format (32x32)", 0),
 				("HD (128x128)", 1)
 			)
 		)
