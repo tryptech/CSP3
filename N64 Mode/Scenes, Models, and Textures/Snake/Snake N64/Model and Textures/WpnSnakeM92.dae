@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.5.0" xmlns="http://www.collada.org/2008/03/COLLADASchema">
+	<asset>
+		<contributor>
+			<authoring_tool>BrawlCrate</authoring_tool>
+		</contributor>
+		<created>2019-04-28T01:18:43Z</created>
+		<modified>2019-04-28T01:18:43Z</modified>
+		<unit meter="0.01" name="centimeter" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="snake_gun-image" name="snake_gun">
+			<init_from>
+				<ref>snake_gun.png</ref>
+			</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="SnakeGun">
+			<instance_effect url="#SnakeGun-fx" />
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="SnakeGun-fx" name="SnakeGun">
+			<profile_COMMON>
+				<newparam sid="snake_gun-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>snake_gun-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="snake_gun-sampler">
+					<sampler2D>
+						<source>snake_gun-surface</source>
+						<instance_image url="#snake_gun-image" />
+						<wrap_s>WRAP</wrap_s>
+						<wrap_t>WRAP</wrap_t>
+						<minfilter>LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="snake_gun-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_geometries>
+		<geometry id="XXX_057_1CE13C32_c_bmp" name="XXX_057_1CE13C32_c_bmp">
+			<mesh>
+				<source id="XXX_057_1CE13C32_c_bmp_Positions">
+					<float_array id="XXX_057_1CE13C32_c_bmp_PosArr" count="72">1.358363 17.08412 9.539268 1.413198 17.65082 9.514889 1.786687 17.0815 9.450831 1.734437 17.64888 9.44857 1.07993 17.19239 7.913357 0.9941371 16.01356 7.537869 0.9584456 17.28984 7.323132 0.8576785 15.98375 6.868086 1.847396 17.71414 11.35406 2.138898 17.35491 11.2586 1.799092 17.35656 11.34224 1.720989 17.32052 9.358906 1.400031 17.32205 9.427776 1.179124 15.98187 6.802775 1.279685 17.28788 7.256814 0.838211 17.03693 7.024756 1.266537 17.03433 6.936337 1.315584 16.01168 7.472557 1.401169 17.19043 7.847041 1.473667 17.66074 9.534965 1.710234 17.65957 9.484092 2.104835 17.71292 11.29045 1.258543 17.60598 7.147893 0.9373036 17.60794 7.214212</float_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_PosArr" count="24" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="XXX_057_1CE13C32_c_bmp_Normals">
+					<float_array id="XXX_057_1CE13C32_c_bmp_NormArr" count="126">0.2022863 0.022545 0.9790668 0.2022735 0.022536 0.9790695 0.2022598 0.022527 0.9790723 -0.9792259 0.006713 0.2026599 -0.9795668 0.006427 0.2010148 -0.9799056 0.006141 0.1993694 0.2386595 -0.063836 0.9690031 0.2066811 -0.488587 0.8476826 0.1026763 -0.894241 0.4356497 -0.0006211387 -0.999834 0.01819161 -0.0008793754 -0.999834 0.01820175 -0.1856966 0.335389 -0.9235969 -0.1870769 0.335717 -0.9231992 -0.1884557 0.336045 -0.9227997 -0.002109836 -0.999813 0.01919959 -0.002129253 -0.999813 0.0191995 -0.002149447 -0.999813 0.01920058 0.9799056 -0.00614 -0.1993694 0.9795668 -0.006427 -0.2010148 0.9792262 -0.006715 -0.2026589 0.003073849 -0.999034 0.04383647 0.07652006 -0.912076 0.4028182 0.1505561 -0.63983 0.7536242 0.188977 -0.310128 0.9317232 0.190423 -0.309774 0.9315468 -0.6255942 0.761246 -0.170692 -0.5957268 0.357095 -0.7194396 0.4606349 0.562999 -0.6861832 0.5353973 0.307434 -0.7866598 0.9702238 0.110891 -0.2153355 0.4134715 0.902978 -0.1169272 -0.6509912 0.750822 0.1117025 -0.9707438 0.136237 0.1977262 0.4733076 0.557359 -0.6829718 0.422227 0.90049 -0.1041254 -0.6335089 0.755594 -0.1665649 -0.6564509 0.744453 0.1219101 -0.9744525 0.102872 0.1996463 -0.5960684 0.34414 -0.7254446 0.5471227 0.297241 -0.7824988 0.9750562 0.088941 -0.2033586 0.2391015 -0.063454 0.9689185</float_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_NormArr" count="42" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="XXX_057_1CE13C32_c_bmp_UVs0">
+					<float_array id="XXX_057_1CE13C32_c_bmp_UVArr0" count="22">0 0 1 0 0.076172 0.336914 0 0.210938 0.972656 0.329102 1 0.22168 0.598722 0 0.598722 0.497416 0 1 1 0.451755 1 0.908203</float_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_UVArr0" count="11" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="XXX_057_1CE13C32_c_bmp_Vertices">
+					<input semantic="POSITION" source="#XXX_057_1CE13C32_c_bmp_Positions" />
+				</vertices>
+				<triangles material="SnakeGun" count="34">
+					<input semantic="VERTEX" source="#XXX_057_1CE13C32_c_bmp_Vertices" offset="0" />
+					<input semantic="NORMAL" source="#XXX_057_1CE13C32_c_bmp_Normals" offset="1" />
+					<input semantic="TEXCOORD" source="#XXX_057_1CE13C32_c_bmp_UVs0" set="0" offset="2" />
+					<p>2 1 0 1 1 1 0 0 0 3 2 1 1 1 1 2 1 0 6 4 4 5 4 3 4 3 2 7 5 5 5 4 3 6 4 4 10 8 6 9 7 6 8 6 1 11 9 7 9 7 6 10 8 6 12 10 7 11 9 7 10 8 6 7 12 5 14 12 4 13 11 5 6 13 4 14 12 4 7 12 5 16 15 8 0 15 0 15 14 8 2 16 0 0 15 0 16 15 8 14 18 4 17 18 3 13 17 5 18 19 2 17 18 3 14 18 4 17 22 3 5 21 3 13 20 5 4 23 2 5 21 3 17 22 3 18 24 2 4 23 2 17 22 3 20 27 9 12 26 7 19 25 9 11 28 7 12 26 7 20 27 9 9 29 6 11 28 7 20 27 9 19 25 9 8 31 1 21 30 1 10 32 6 8 31 1 19 25 9 12 26 7 10 32 6 19 25 9 21 30 1 20 27 9 19 25 9 9 29 6 20 27 9 21 30 1 23 35 10 3 34 1 22 33 10 1 36 1 3 34 1 23 35 10 0 37 0 1 36 1 23 35 10 22 33 10 16 39 8 15 38 8 2 40 0 16 39 8 22 33 10 3 34 1 2 40 0 22 33 10 15 38 8 23 35 10 22 33 10 0 37 0 23 35 10 15 38 8 7 20 5 13 20 5 5 21 3 21 41 1 8 6 1 9 7 6</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="XXX_057_1CE13C32_c_bmp_Controller">
+			<skin source="#XXX_057_1CE13C32_c_bmp">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="XXX_057_1CE13C32_c_bmp_Joints">
+					<Name_array id="XXX_057_1CE13C32_c_bmp_JointArr" count="4">WpnSnakeNikita_TopNa WpnSnakeNikita_HaveN WpnSnakeNikita_BodyM WpnSnakeNikita_ConstN</Name_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_JointArr" count="4">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="XXX_057_1CE13C32_c_bmp_Matrices">
+					<float_array id="XXX_057_1CE13C32_c_bmp_MatArr" count="64">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0.330702 0 0 1 0.462316 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 -2.000001E-06 0 9.968363E-07 2.000001E-06 1 -1E-06 -0.4984142 2.000001E-12 1E-06 1 -3.819915 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_MatArr" count="4" stride="16">
+							<param type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="XXX_057_1CE13C32_c_bmp_Weights">
+					<float_array id="XXX_057_1CE13C32_c_bmp_WeightArr" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#XXX_057_1CE13C32_c_bmp_WeightArr" count="1">
+							<param type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#XXX_057_1CE13C32_c_bmp_Joints" />
+					<input semantic="INV_BIND_MATRIX" source="#XXX_057_1CE13C32_c_bmp_Matrices" />
+				</joints>
+				<vertex_weights count="24">
+					<input semantic="JOINT" offset="0" source="#XXX_057_1CE13C32_c_bmp_Joints" />
+					<input semantic="WEIGHT" offset="1" source="#XXX_057_1CE13C32_c_bmp_Weights" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<v>2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="RootNode" name="RootNode">
+			<node id="WpnSnakeNikita_TopNa" name="WpnSnakeNikita_TopNa" sid="WpnSnakeNikita_TopNa" type="JOINT">
+				<node id="WpnSnakeNikita_HaveN" name="WpnSnakeNikita_HaveN" sid="WpnSnakeNikita_HaveN" type="JOINT">
+					<translate>1.131 16.7 7.354</translate>
+					<rotate>0 1 0 11.602</rotate>
+					<node id="WpnSnakeNikita_BodyM" name="WpnSnakeNikita_BodyM" sid="WpnSnakeNikita_BodyM" type="JOINT">
+						<translate>0 0.330702 0.462316</translate>
+					</node>
+					<node id="WpnSnakeNikita_ConstN" name="WpnSnakeNikita_ConstN" sid="WpnSnakeNikita_ConstN" type="JOINT">
+						<translate>0 0.82912 4.28223</translate>
+						<rotate>0 0 1 -0.0001145916</rotate>
+						<rotate>1 0 0 -5.729578E-05</rotate>
+					</node>
+				</node>
+			</node>
+			<node id="XXX_057_1CE13C32_c_bmp" name="XXX_057_1CE13C32_c_bmp" type="NODE">
+				<instance_controller url="#XXX_057_1CE13C32_c_bmp_Controller">
+					<skeleton>#WpnSnakeNikita_TopNa</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="SnakeGun" target="#SnakeGun">
+								<bind_vertex_input semantic="TEXCOORD0" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#RootNode" />
+	</scene>
+</COLLADA>
