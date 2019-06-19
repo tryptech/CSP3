@@ -37,3 +37,5 @@ Right eye highlight location:
 X: -0.100
 Y: 0.000
 Z: 0.000
+
+Notes: This model has an edited version of the Env texture to keep it looking yellow in the render rather than tan/brown. Please refer to the GIMP xcf file.
