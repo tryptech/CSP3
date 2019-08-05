@@ -1,5 +1,5 @@
 1. Install Gimp via the installer.
 2. Copy the asset-croppy.py and batch-stock-processor.py files.
-3. Go to your user folder (usually C:\Users\[USER]) and find a folder called .gimp-2.8. 
+3. Go to your user folder (usually C:\Users\[USER]) and find a folder called .gimp-2.8. For portable GIMP use "Data\.gimp\.gegl-0.0\plug-ins"
 4. Find the "plug-ins" folder. 
 5. Paste the files you copied earlier.
