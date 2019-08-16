@@ -85,6 +85,8 @@ def crop_csp_process(file_inpath, file_outpath, file_mask, file_crop, hd_resize)
 		suffix = "_STC.png"
 		if (hd_resize == 1):
 			suffix = "_STC_HD.png"
+		if (hd_resize == 0):
+			suffix = "_STC_CI4.png"			
 		pdb.gimp_file_save(image,pdb.gimp_image_get_active_drawable(image),os.path.join(file_outpath,filename + suffix), filename + suffix)
 		pdb.gimp_image_delete(image)
 	pdb.gimp_message("Stocks made! Check your image folder. :D")
