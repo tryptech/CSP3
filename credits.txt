@@ -1,0 +1,163 @@
+The Cosmetic Standardization Project is brought to you by the Cosmetic Standardization Project Backroom. 
+
+Join our Discord: https://discord.me/csp
+
+Team members:
+
+davidvkimball
+tryptech
+Layell
+MetalLegacy
+EggTimer
+Xenthos
+
+Special thanks Mach 7, Kuro Kairaku, Renegade Jade, and Sylv for some consulting help early on. Thank you to the Legacy TE team for implementing into their build and being the first proof of concept! 
+
+Team member roles (by davidvkimball):
+
+Tryptech is responsible for the incredible model polish work that was done. It's no accident that they look this good. He also setup the materials, render layers, and lighting setup for the Blender scenes. In addition, he created and developed the Gimp pluggins "Asset Cropper, Stock Cropper" and other variants. He is the cause of this idea becoming reality. It simply would not have happened without him. 
+
+Layell setup the crops for the renders to be just perfect for in-game CSPs and BPs. He also spearheaded the stock process and increased CSProject's scope to accommodate for it. He created many of the custom textures you see for the stocks. He also helped setup the guides for this project. 
+
+MetalLegacy's eye for detail was unparalleled, and he always turned his thoughts into action. He created the Jigglypuff and Kirby HD eye textures from scratch, and then setup a template and guide so it could be done by anyone. His feedback helped push this project to be even greater. 
+
+EggTimer helped enormously with scene setup and model importing. He also helped teach me how to use Blender since I knew nothing about it, and brought me up to speed to just what I needed to know. 
+
+Xenthos was helped in the production stage. He helped by going through our whole process and identifying pain points we were able to address prior to release. He's also been helping manage the Discord server. 
+
+I'll give myself credit for the idea and a lot of the pre-work before CSProject began. Many of the poses and renders are based upon my work that I had previously done in 3DS Max. I also did all of the planning, organization, management, and process buildout. 
+
+The entire team was involved and helped at multiple points along the way. 
+
+Character-specific credits: 
+
+All renders and cosmetic assets were created by davidvkimball, tryptech, MetalLegacy, Layell, EggTimer, and Xenthos from the Cosmetic Standardization Project Backroom. 
+
+MARIO
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+DONKEY KONG
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+LINK
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+SAMUS
+Pose by Nanobuds, with modifications by davidvkimball, rendered by CSProject Backroom
+
+YOSHI
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+KIRBY
+Pose by davidvkimball, model polish by tryptech, HD eyes by MetalLegacy, rendered by CSProject Backroom
+
+FOX
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+PIKACHU
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+LUIGI
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+ 
+CAPTAIN FALCON
+Pose by Nanobuds, model polish by tryptech, rendered by CSProject Backroom
+
+NESS
+Pose by Sylv, model polish by tryptech, rendered by CSProject Backroom
+
+BOWSER 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+PEACH
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+ZELDA
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+SHEIK
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+ICE CLIMBERS 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+MARTH
+Pose by Kuro Kairaku, model polish by tryptech, rendered by CSProject Backroom
+
+MR. GAME & WATCH 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+FALCO
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+GANONDORF
+Pose by Kuro Kairaku, model polish by tryptech, rendered by CSProject Backroom
+
+META KNIGHT
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+PIT
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+ZERO SUIT SAMUS
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+OLIMAR 
+Pose by Nanobuds, with edits by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+LUCAS
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+DIDDY KONG
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+MEWTWO
+Pose by Nanobuds, modified by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+CHARIZARD 
+Pose by davidvkimball, model polish + fire element by tryptech, rendered by CSProject Backroom
+
+SQUIRTLE 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+IVYSAUR 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+DEDEDE
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+LUCARIO
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+IKE
+Pose by Xenthos, model polish by tryptech, rendered by CSProject Backroom
+
+ROB / ROBOT
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+JIGGLYPUFF / PURIN
+Pose by davidvkimball, model polish by tryptech, HD eyes by MetalLegacy, rendered by CSProject Backroom
+
+WARIO
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+ROY 
+Pose by Nanobuds, model polish by tryptech, rendered by CSProject Backroom
+
+TOON LINK
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom 
+
+WOLF
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+SNAKE
+Pose and model polish by tryptech, rendered by CSProject Backroom
+
+SONIC
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+WARIO MAN 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
+
+GIGA BOWSER 
+Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom 
