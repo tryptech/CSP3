@@ -11,7 +11,7 @@ MetalLegacy
 EggTimer
 Xenthos
 
-Special thanks Mach 7, Kuro Kairaku, Renegade Jade, and Sylv for some consulting help early on. Sub and Spigel were a great help in polishing models for our 2.5 update. Thank you to the Legacy TE team for implementing into their build and being the first proof of concept! 
+Special thanks Mach 7, Kuro Kairaku, Renegade Jade, and Sylv for some consulting help early on. Sub and Spigel were a great help in polishing models for our 2.5 update. Thanks to mawwwk of the Legacy TE team for processing various renders, generating certain stock icons, and making small edits when needed. Also thank you to the rest of the Legacy TE team for implementing into their build and being the first proof of concept! 
 
 Team member roles (by davidvkimball):
 
