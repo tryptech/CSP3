@@ -1,0 +1,29 @@
+Cosmetic Standardization Project 2.5 Update Notes
+
+-For maximum compatability with ColorSmash we have updated the portable launcher to GIMP 2.8.22, please do not use any future versions of GIMP for this project as it will cause slight differences when resizing.
+
+-The new default stock system is for ColorSmash Ready stocks. The gimp plug-in has been updated to have three options, ColorSmash Ready, and the original CI4 and HD options. We recommend releasing packs with all three options.
+
+The following characters and costumes have had updates:
+
+CAPTAIN FALCON: [STOCK ONLY] Retro has updated stocks
+
+DIDDY: Hooded costume improved hood material
+
+IKE: [STOCK ONLY] New standard stocks
+
+LINK: OoT has fixed hole near neck
+
+MARTH: Improved Holy War pads and vest
+
+META KNIGHT: New eye placement for all costumes, Butterfly has removed cape
+
+Sonic: Tails render adjusted to have a render Env texture, better belt on hands
+
+WARIO: All three costumes have more consistent lighting and features
+
+WOLF: Fur shadows adjusted on standard face.
+
+YOSHI: [STOCK ONLY] Stock size adjusted
+
+ZSS: Hotpants has had a belly button fixes.

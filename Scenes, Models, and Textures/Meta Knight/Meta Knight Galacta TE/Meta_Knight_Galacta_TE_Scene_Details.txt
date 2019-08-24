@@ -12,5 +12,3 @@ Right eye iris location:
 X: -0.050
 Y: 0.000
 Z: 0.000 
-
-Polished by Spigel
