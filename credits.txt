@@ -11,7 +11,7 @@ MetalLegacy
 EggTimer
 Xenthos
 
-Special thanks Mach 7, Kuro Kairaku, Renegade Jade, and Sylv for some consulting help early on. SubZero and Spigel were a great help in polishing models for our 2.5 update. Thank you to the Legacy TE team for implementing into their build and being the first proof of concept! 
+Special thanks Mach 7, Kuro Kairaku, Renegade Jade, and Sylv for some consulting help early on. Sub and Spigel were a great help in polishing models for our 2.5 update. Thank you to the Legacy TE team for implementing into their build and being the first proof of concept! 
 
 Team member roles (by davidvkimball):
 
@@ -34,7 +34,7 @@ Character-specific credits:
 All renders and cosmetic assets were created by davidvkimball, tryptech, MetalLegacy, Layell, EggTimer, and Xenthos from the Cosmetic Standardization Project Backroom. 
 
 MARIO
-Pose by davidvkimball, model polish by tryptech and MarioDox, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, and MarioDox, rendered by CSProject Backroom
 
 DONKEY KONG
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
@@ -58,7 +58,7 @@ PIKACHU
 Pose by davidvkimball, model polish by tryptech, MarioDox, Layell, and Spigel, rendered by CSProject Backroom
 
 LUIGI
-Pose by davidvkimball, model polish by tryptech and Xenthos, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, and Xenthos, rendered by CSProject Backroom
  
 CAPTAIN FALCON
 Pose by Nanobuds, model polish by tryptech, rendered by CSProject Backroom
@@ -79,7 +79,7 @@ SHEIK
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
 
 ICE CLIMBERS 
-Pose by davidvkimball, model polish by tryptech and SubZero, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, and Sub, rendered by CSProject Backroom
 
 MARTH
 Pose by Kuro Kairaku, model polish by tryptech, rendered by CSProject Backroom
@@ -94,7 +94,7 @@ GANONDORF
 Pose by Kuro Kairaku, model polish by tryptech, rendered by CSProject Backroom
 
 META KNIGHT
-Pose by davidvkimball, model polish by tryptech and Spigel, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, Spigel, and Layell rendered by CSProject Backroom
 
 PIT
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
@@ -106,13 +106,13 @@ OLIMAR
 Pose by Nanobuds, with edits by davidvkimball, model polish by tryptech and MetalLegacy, rendered by CSProject Backroom
 
 LUCAS
-Pose by davidvkimball, model polish by tryptech and Spigel, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, Spigel, and Layell, rendered by CSProject Backroom
 
 DIDDY KONG
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
 
 MEWTWO
-Pose by Nanobuds, modified by davidvkimball, model polish by tryptech and Layell, rendered by CSProject Backroom
+Pose by Nanobuds, modified by davidvkimball, model polish by tryptech, and Layell, rendered by CSProject Backroom
 
 CHARIZARD 
 Pose by davidvkimball, model polish + fire element by tryptech, rendered by CSProject Backroom
@@ -130,13 +130,13 @@ LUCARIO
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
 
 IKE
-Pose by Xenthos, model polish by tryptech and Layell, rendered by CSProject Backroom
+Pose by Xenthos, model polish by tryptech, and Layell, rendered by CSProject Backroom
 
 ROB / ROBOT
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
 
 JIGGLYPUFF / PURIN
-Pose by davidvkimball, model polish by tryptech, Layell and Spigel, HD eyes by MetalLegacy, rendered by CSProject Backroom
+Pose by davidvkimball, model polish by tryptech, Spigel, and Layell, HD eyes by MetalLegacy, rendered by CSProject Backroom
 
 WARIO
 Pose by davidvkimball, model polish by tryptech, rendered by CSProject Backroom
