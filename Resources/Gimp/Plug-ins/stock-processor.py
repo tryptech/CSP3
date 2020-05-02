@@ -6,7 +6,7 @@
 from gimpfu import *
 import os
 
-def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
+def crop_csp_process(file_input, file_mask, hd_resize) :
 
 	filename = os.path.splitext(os.path.split(file_input)[1])[0]
 	filepath = os.path.split(file_input)[0]
@@ -15,22 +15,29 @@ def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
 	image = pdb.file_png_load(file_input,os.path.basename(file_input))
 # Open image
 	display = pdb.gimp_display_new(image)
+
+# Get black
+        pdb.gimp_context_set_default_colors()
+        color = pdb.gimp_layer_new(image,1920,1080,1,"color",100,0)
+	pdb.gimp_image_insert_layer(image,color,None,1)
+	pdb.gimp_edit_bucket_fill(color, 0, 0, 100, 255, 0, 0, 0)
+	black = pdb.gimp_image_pick_color(image, color, 0, 0, 0, 0, 0)
+	pdb.gimp_image_remove_layer(image,color)
+
 # Add mask to new layer over image
-	if (bool(file_mask and file_mask.strip())):
-		layer_mask = pdb.gimp_file_load_layer(image,file_mask)
-	else:
-		layer_mask = pdb.gimp_file_load_layer(image,file_crop)
+	layer_mask = pdb.gimp_file_load_layer(image,file_mask)
 	pdb.gimp_image_insert_layer(image,layer_mask,None,0)
 # Mask layer alpha to selection
 	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
-	pdb.gimp_image_remove_layer(image,layer_mask)
 # Apply mask
+        pdb.gimp_image_remove_layer(image,layer_mask)
 	pdb.gimp_edit_clear(pdb.gimp_image_get_active_layer(image))
+	pdb.gimp_selection_none(image)
 # Add crop to new layer over image
-	layer_crop = pdb.gimp_file_load_layer(image,file_crop)
+	layer_crop = pdb.gimp_file_load_layer(image,file_mask)
 	pdb.gimp_image_insert_layer(image,layer_crop,None,0)
 # Mask layer alpha to selection
-	pdb.gimp_image_select_item(image,2,pdb.gimp_image_get_active_layer(image))
+	pdb.gimp_by_color_select(layer_crop, black, 0, 2, 0, 0, 0, 0)
 	pdb.gimp_image_remove_layer(image,layer_crop)
 # Invert Selection
 	pdb.gimp_selection_invert(image)
@@ -61,7 +68,6 @@ def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
 	strokeWidth = 1.3
 	if (hd_resize == 1):
 		strokeWidth = 8
-	pdb.gimp_context_set_default_colors()
 	pdb.gimp_edit_fill(stroke,0)
 	pdb.gimp_context_set_brush("2. Hardness 100")
 	pdb.gimp_context_set_brush_size(strokeWidth)
@@ -92,18 +98,17 @@ def crop_csp_process(file_input, file_mask, file_crop, hd_resize) :
 	return
 
 register(
-	"python-fu-STOCK-PROCESSOR",
+	"python-fu-STOCK-PROCESSOR-ONE-MASK",
 	"Crops images for stock icons (Make sure mask matches image dimensions). Results go to the stock image folder. \n MAKE SURE THAT THE PAINTBRUSH TOOL IS SELECTED BEFORE YOU START!",
 	"Using a user-defined mask, crops a user-defined image to a certain size, and offers resize options. The final result is then saved with the appropriate suffix to the same folder as the source image.",
 	"tryptech",
 	"tryptech",
 	"2018",
-	"<Toolbox>/Tools/Stock Processor",
+	"<Toolbox>/Tools/Stock Processor One Mask",
 	"",
 	[
 		(PF_FILE, "file_input", "Stock Image File", None),
 		(PF_FILE, "file_mask", "Stock Mask File", None),
-		(PF_FILE, "file_crop", "Stock Crop File", None),
 		(PF_RADIO, "hd_resize", "Set Resize Scale: ", 2,
 			(
 				("SD: Color Smash Ready (32x32)", 2),
