@@ -2,10 +2,10 @@
 <COLLADA version="1.5.0" xmlns="http://www.collada.org/2008/03/COLLADASchema">
 	<asset>
 		<contributor>
-			<authoring_tool>BrawlCrate</authoring_tool>
+			<authoring_tool>BrawlBox</authoring_tool>
 		</contributor>
-		<created>2019-03-08T14:20:59Z</created>
-		<modified>2019-03-08T14:20:59Z</modified>
+		<created>2020-05-19T17:24:31Z</created>
+		<modified>2020-05-19T17:24:31Z</modified>
 		<unit meter="0.01" name="centimeter" />
 		<up_axis>Y_UP</up_axis>
 	</asset>
@@ -87,6 +87,12 @@
 		</image>
 	</library_images>
 	<library_materials>
+		<material id="Material32">
+			<instance_effect url="#Material32-fx" />
+		</material>
+		<material id="phong2">
+			<instance_effect url="#phong2-fx" />
+		</material>
 		<material id="Arma03">
 			<instance_effect url="#Arma03-fx" />
 		</material>
@@ -135,14 +141,64 @@
 		<material id="mune_houseki">
 			<instance_effect url="#mune_houseki-fx" />
 		</material>
-		<material id="phong2">
-			<instance_effect url="#phong2-fx" />
-		</material>
-		<material id="Material32">
-			<instance_effect url="#Material32-fx" />
-		</material>
 	</library_materials>
 	<library_effects>
+		<effect id="Material32-fx" name="Material32">
+			<profile_COMMON>
+				<newparam sid="skarf-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>skarf-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="skarf-sampler">
+					<sampler2D>
+						<source>skarf-surface</source>
+						<instance_image url="#skarf-image" />
+						<wrap_s>WRAP</wrap_s>
+						<wrap_t>WRAP</wrap_t>
+						<minfilter>LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="skarf-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="phong2-fx" name="phong2">
+			<profile_COMMON>
+				<newparam sid="layout copy-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>layout copy-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="layout copy-sampler">
+					<sampler2D>
+						<source>layout copy-surface</source>
+						<instance_image url="#layout copy-image" />
+						<wrap_s>WRAP</wrap_s>
+						<wrap_t>WRAP</wrap_t>
+						<minfilter>LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="layout copy-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
 		<effect id="Arma03-fx" name="Arma03">
 			<profile_COMMON>
 				<newparam sid="Mar03-surface">
@@ -246,40 +302,6 @@
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="MarthEyeIris-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeIris-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeIris-sampler">
-					<sampler2D>
-						<source>MarthEyeIris-surface</source>
-						<instance_image url="#MarthEyeIris-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeWhite-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeWhite-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeWhite-sampler">
-					<sampler2D>
-						<source>MarthEyeWhite-surface</source>
-						<instance_image url="#MarthEyeWhite-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -304,40 +326,6 @@
 						<instance_image url="#MarthEyeHigh-image" />
 						<wrap_s>WRAP</wrap_s>
 						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeIris-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeIris-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeIris-sampler">
-					<sampler2D>
-						<source>MarthEyeIris-surface</source>
-						<instance_image url="#MarthEyeIris-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeWhite-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeWhite-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeWhite-sampler">
-					<sampler2D>
-						<source>MarthEyeWhite-surface</source>
-						<instance_image url="#MarthEyeWhite-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
 						<minfilter>LINEAR</minfilter>
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
@@ -370,40 +358,6 @@
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="MarthEyeYellow-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeYellow-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeYellow-sampler">
-					<sampler2D>
-						<source>MarthEyeYellow-surface</source>
-						<instance_image url="#MarthEyeYellow-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeWhite-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeWhite-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeWhite-sampler">
-					<sampler2D>
-						<source>MarthEyeWhite-surface</source>
-						<instance_image url="#MarthEyeWhite-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -428,40 +382,6 @@
 						<instance_image url="#MarthEyeHigh-image" />
 						<wrap_s>WRAP</wrap_s>
 						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeYellow-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeYellow-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeYellow-sampler">
-					<sampler2D>
-						<source>MarthEyeYellow-surface</source>
-						<instance_image url="#MarthEyeYellow-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="MarthEyeWhite-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>MarthEyeWhite-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="MarthEyeWhite-sampler">
-					<sampler2D>
-						<source>MarthEyeWhite-surface</source>
-						<instance_image url="#MarthEyeWhite-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
 						<minfilter>LINEAR</minfilter>
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
@@ -550,23 +470,6 @@
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="Mar07-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>Mar07-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="Mar07-sampler">
-					<sampler2D>
-						<source>Mar07-surface</source>
-						<instance_image url="#Mar07-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -619,23 +522,6 @@
 						<instance_image url="#Mar06-image" />
 						<wrap_s>WRAP</wrap_s>
 						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="Ref-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>Ref-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="Ref-sampler">
-					<sampler2D>
-						<source>Ref-surface</source>
-						<instance_image url="#Ref-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
 						<minfilter>LINEAR</minfilter>
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
@@ -724,23 +610,6 @@
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="Ref-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>Ref-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="Ref-sampler">
-					<sampler2D>
-						<source>Ref-surface</source>
-						<instance_image url="#Ref-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -769,27 +638,66 @@
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="Ref-surface">
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="Mar01-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material32_ExtMtl-fx" name="Material32_ExtMtl">
+			<profile_COMMON>
+				<newparam sid="metal00-surface">
 					<surface type="2D">
 						<init_from>
-							<ref>Ref-image</ref>
+							<ref>metal00-image</ref>
 						</init_from>
 					</surface>
 				</newparam>
-				<newparam sid="Ref-sampler">
+				<newparam sid="metal00-sampler">
 					<sampler2D>
-						<source>Ref-surface</source>
-						<instance_image url="#Ref-image" />
+						<source>metal00-surface</source>
+						<instance_image url="#metal00-image" />
 						<wrap_s>CLAMP</wrap_s>
 						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
+						<minfilter>NEAREST</minfilter>
+						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
-							<texture texture="Mar01-sampler" texcoord="TEXCOORD0" />
+							<texture texture="metal00-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="phong2_ExtMtl-fx" name="phong2_ExtMtl">
+			<profile_COMMON>
+				<newparam sid="metal00-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>metal00-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="metal00-sampler">
+					<sampler2D>
+						<source>metal00-surface</source>
+						<instance_image url="#metal00-image" />
+						<wrap_s>CLAMP</wrap_s>
+						<wrap_t>CLAMP</wrap_t>
+						<minfilter>NEAREST</minfilter>
+						<magfilter>NEAREST</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="metal00-sampler" texcoord="TEXCOORD0" />
 						</diffuse>
 					</phong>
 				</technique>
@@ -812,23 +720,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -859,23 +750,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -902,23 +776,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -949,57 +806,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1026,57 +832,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1107,57 +862,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1184,57 +888,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1265,23 +918,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1308,23 +944,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1355,40 +974,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>NEAREST</minfilter>
-						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1415,23 +1000,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1462,23 +1030,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1505,23 +1056,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1552,23 +1086,6 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
@@ -1595,23 +1112,6 @@
 						<wrap_t>CLAMP</wrap_t>
 						<minfilter>NEAREST</minfilter>
 						<magfilter>NEAREST</magfilter>
-					</sampler2D>
-				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
 					</sampler2D>
 				</newparam>
 				<technique sid="COMMON">
@@ -1642,83 +1142,10 @@
 						<magfilter>NEAREST</magfilter>
 					</sampler2D>
 				</newparam>
-				<newparam sid="metal00-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>metal00-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="metal00-sampler">
-					<sampler2D>
-						<source>metal00-surface</source>
-						<instance_image url="#metal00-image" />
-						<wrap_s>CLAMP</wrap_s>
-						<wrap_t>CLAMP</wrap_t>
-						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
 				<technique sid="COMMON">
 					<phong>
 						<diffuse>
 							<texture texture="metal00-sampler" texcoord="TEXCOORD0" />
-						</diffuse>
-					</phong>
-				</technique>
-			</profile_COMMON>
-		</effect>
-		<effect id="phong2-fx" name="phong2">
-			<profile_COMMON>
-				<newparam sid="layout copy-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>layout copy-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="layout copy-sampler">
-					<sampler2D>
-						<source>layout copy-surface</source>
-						<instance_image url="#layout copy-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<technique sid="COMMON">
-					<phong>
-						<diffuse>
-							<texture texture="layout copy-sampler" texcoord="TEXCOORD0" />
-						</diffuse>
-					</phong>
-				</technique>
-			</profile_COMMON>
-		</effect>
-		<effect id="Material32-fx" name="Material32">
-			<profile_COMMON>
-				<newparam sid="skarf-surface">
-					<surface type="2D">
-						<init_from>
-							<ref>skarf-image</ref>
-						</init_from>
-					</surface>
-				</newparam>
-				<newparam sid="skarf-sampler">
-					<sampler2D>
-						<source>skarf-surface</source>
-						<instance_image url="#skarf-image" />
-						<wrap_s>WRAP</wrap_s>
-						<wrap_t>WRAP</wrap_t>
-						<minfilter>LINEAR</minfilter>
-						<magfilter>LINEAR</magfilter>
-					</sampler2D>
-				</newparam>
-				<technique sid="COMMON">
-					<phong>
-						<diffuse>
-							<texture texture="skarf-sampler" texcoord="TEXCOORD0" />
 						</diffuse>
 					</phong>
 				</technique>
