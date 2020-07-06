@@ -1,0 +1,238 @@
+{
+    "material": [
+        {
+            "use_backface_culling": false,
+            "blend_method": "HASHED",
+            "shadow_method": "HASHED",
+            "alpha_threshold": 0.5,
+            "use_screen_refraction": false,
+            "refraction_depth": 0.0,
+            "use_sss_translucency": false,
+            "pass_index": 0
+        }
+    ],
+    "frames": [],
+    "nodes": [
+        {
+            "node": "ShaderNodeBsdfTransparent",
+            "name": "__node__Transparent BSDF",
+            "label": "",
+            "location": [
+                -100.6451644897461,
+                402.5806579589844
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "SHADER",
+                    "BSDF",
+                    false
+                ],
+                [
+                    -1,
+                    -1,
+                    -1
+                ],
+                [
+                    1,
+                    "Color",
+                    [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeMixShader",
+            "name": "__node__Mix Shader",
+            "label": "",
+            "location": [
+                100.6451644897461,
+                301.93548583984375
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "SHADER",
+                    "Shader",
+                    false
+                ],
+                [
+                    -1,
+                    -1,
+                    -1
+                ],
+                [
+                    1,
+                    "Fac",
+                    0.5,
+                    false
+                ],
+                [
+                    5,
+                    "Shader",
+                    "SHADER",
+                    false
+                ],
+                [
+                    5,
+                    "Shader",
+                    "SHADER",
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeEmission",
+            "name": "__node__Emission",
+            "label": "",
+            "location": [
+                -100.6451644897461,
+                301.93548583984375
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "SHADER",
+                    "Emission",
+                    false
+                ],
+                [
+                    -1,
+                    -1,
+                    -1
+                ],
+                [
+                    1,
+                    "Color",
+                    [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    false
+                ],
+                [
+                    1,
+                    "Strength",
+                    3.0,
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeTexImage",
+            "name": "__node__Image Texture",
+            "label": "",
+            "location": [
+                -402.5806579589844,
+                301.93548583984375
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 240.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "RGBA",
+                    "Color",
+                    false
+                ],
+                [
+                    -2,
+                    "VALUE",
+                    "Alpha",
+                    false
+                ],
+                [
+                    4,
+                    "filepath",
+                    ""
+                ],
+                [
+                    0,
+                    "interpolation",
+                    "Smart"
+                ],
+                [
+                    0,
+                    "projection",
+                    "FLAT"
+                ],
+                [
+                    0,
+                    "extension",
+                    "REPEAT"
+                ],
+                [
+                    1,
+                    "Vector",
+                    [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    false
+                ]
+            ]
+        }
+    ],
+    "links": [
+        {
+            "output_node": "__node__Image Texture",
+            "output_socket": 1,
+            "input_node": "__node__Mix Shader",
+            "input_socket": 0,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Transparent BSDF",
+            "output_socket": 0,
+            "input_node": "__node__Mix Shader",
+            "input_socket": 1,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Emission",
+            "output_socket": 0,
+            "input_node": "__node__Mix Shader",
+            "input_socket": 2,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Image Texture",
+            "output_socket": 0,
+            "input_node": "__node__Emission",
+            "input_socket": 0,
+            "main_socket_type": ""
+        }
+    ],
+    "keyframes": [],
+    "groups": []
+}

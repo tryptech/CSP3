@@ -1,0 +1,97 @@
+{
+    "material": [
+        {
+            "use_backface_culling": false,
+            "blend_method": "OPAQUE",
+            "shadow_method": "OPAQUE",
+            "alpha_threshold": 0.5,
+            "use_screen_refraction": false,
+            "refraction_depth": 0.0,
+            "use_sss_translucency": false,
+            "pass_index": 0
+        }
+    ],
+    "frames": [],
+    "nodes": [
+        {
+            "node": "ShaderNodeEmission",
+            "name": "__node__Emission",
+            "label": "",
+            "location": [
+                100.6451644897461,
+                301.93548583984375
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    1,
+                    "Strength",
+                    3.0
+                ],
+                [
+                    1,
+                    "Color",
+                    [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeTexImage",
+            "name": "__node__Image Texture",
+            "label": "",
+            "location": [
+                -201.2903289794922,
+                301.93548583984375
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 240.0,
+            "extra_settings": [
+                [
+                    4,
+                    "filepath",
+                    ""
+                ],
+                [
+                    0,
+                    "interpolation",
+                    "Smart"
+                ],
+                [
+                    0,
+                    "projection",
+                    "FLAT"
+                ],
+                [
+                    0,
+                    "extension",
+                    "REPEAT"
+                ]
+            ]
+        }
+    ],
+    "links": [
+        {
+            "output_node": "__node__Image Texture",
+            "output_socket": "Color",
+            "input_node": "__node__Emission",
+            "input_socket": 0,
+            "main_socket_type": ""
+        }
+    ],
+    "keyframes": [],
+    "groups": []
+}
