@@ -1,0 +1,319 @@
+{
+    "material": [
+        {
+            "use_backface_culling": false,
+            "blend_method": "OPAQUE",
+            "shadow_method": "OPAQUE",
+            "alpha_threshold": 0.5,
+            "use_screen_refraction": false,
+            "refraction_depth": 0.0,
+            "use_sss_translucency": false,
+            "pass_index": 0
+        }
+    ],
+    "frames": [],
+    "nodes": [
+        {
+            "node": "ShaderNodeTexEnvironment",
+            "name": "__node__Environment Texture",
+            "label": "",
+            "location": [
+                -301.93548583984375,
+                0.0
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 240.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "RGBA",
+                    "Color",
+                    false
+                ],
+                [
+                    4,
+                    "filepath",
+                    ""
+                ],
+                [
+                    0,
+                    "interpolation",
+                    "Smart"
+                ],
+                [
+                    0,
+                    "projection",
+                    "MIRROR_BALL"
+                ],
+                [
+                    1,
+                    "Vector",
+                    [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeSeparateXYZ",
+            "name": "__node__Separate XYZ",
+            "label": "",
+            "location": [
+                -704.5161743164062,
+                0.0
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "VALUE",
+                    "X",
+                    false
+                ],
+                [
+                    -2,
+                    "VALUE",
+                    "Y",
+                    false
+                ],
+                [
+                    -2,
+                    "VALUE",
+                    "Z",
+                    false
+                ],
+                [
+                    -1,
+                    -1,
+                    -1
+                ],
+                [
+                    1,
+                    "Vector",
+                    [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeVectorTransform",
+            "name": "__node__Vector Transform",
+            "label": "",
+            "location": [
+                -905.8064575195312,
+                0.0
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "VECTOR",
+                    "Vector",
+                    false
+                ],
+                [
+                    0,
+                    "vector_type",
+                    "VECTOR"
+                ],
+                [
+                    0,
+                    "convert_from",
+                    "WORLD"
+                ],
+                [
+                    0,
+                    "convert_to",
+                    "CAMERA"
+                ],
+                [
+                    1,
+                    "Vector",
+                    [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeTexCoord",
+            "name": "__node__Texture Coordinate",
+            "label": "",
+            "location": [
+                -1107.0968017578125,
+                0.0
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "VECTOR",
+                    "Generated",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "Normal",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "UV",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "Object",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "Camera",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "Window",
+                    false
+                ],
+                [
+                    -2,
+                    "VECTOR",
+                    "Reflection",
+                    false
+                ],
+                [
+                    0,
+                    "from_instancer",
+                    false
+                ]
+            ]
+        },
+        {
+            "node": "ShaderNodeCombineXYZ",
+            "name": "__node__Combine XYZ",
+            "label": "",
+            "location": [
+                -503.225830078125,
+                0.0
+            ],
+            "hide": false,
+            "main_socket_type": "",
+            "parent": "",
+            "hidden_outputs": [],
+            "height": 100.0,
+            "width": 140.0,
+            "extra_settings": [
+                [
+                    -2,
+                    "VECTOR",
+                    "Vector",
+                    false
+                ],
+                [
+                    -1,
+                    -1,
+                    -1
+                ],
+                [
+                    1,
+                    "X",
+                    0.0,
+                    false
+                ],
+                [
+                    1,
+                    "Y",
+                    0.0,
+                    false
+                ],
+                [
+                    1,
+                    "Z",
+                    0.0,
+                    false
+                ]
+            ]
+        }
+    ],
+    "links": [
+        {
+            "output_node": "__node__Combine XYZ",
+            "output_socket": 0,
+            "input_node": "__node__Environment Texture",
+            "input_socket": 0,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Vector Transform",
+            "output_socket": 0,
+            "input_node": "__node__Separate XYZ",
+            "input_socket": 0,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Texture Coordinate",
+            "output_socket": 6,
+            "input_node": "__node__Vector Transform",
+            "input_socket": 0,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Separate XYZ",
+            "output_socket": 0,
+            "input_node": "__node__Combine XYZ",
+            "input_socket": 0,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Separate XYZ",
+            "output_socket": 2,
+            "input_node": "__node__Combine XYZ",
+            "input_socket": 1,
+            "main_socket_type": ""
+        },
+        {
+            "output_node": "__node__Separate XYZ",
+            "output_socket": 1,
+            "input_node": "__node__Combine XYZ",
+            "input_socket": 2,
+            "main_socket_type": ""
+        }
+    ],
+    "keyframes": [],
+    "groups": []
+}
