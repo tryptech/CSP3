@@ -10,9 +10,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 bl_info = {
     "name": "CSP Tools",
     "author": "tryptech, Wayde Brandon Moss",
-    "version": (1, 0, 1),
+    "version": (1, 0, 5),
     "blender": (2, 81, 0),
-    "location": "File > Import/Export",
+    "location": "View3D > Sidebar > Tool",
     "description": "Convenient Tools for CSP workflow",
     "category": "Import-Export"}
 
@@ -1427,6 +1427,17 @@ class DATA_OT_csp_purge(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
+class IMAGE_OT_reload_and_render(bpy.types.Operator):
+    bl_idname = "csp.reload_and_render"
+    bl_label = "Reload all textures and render"
+    
+    def execute(self,context):
+        update_images();
+        if hasattr(bpy.types, "MYBIGBUTTONTAB_PT_MyBigButton"):
+            bpy.ops.cameramanager.render_scene_camera(renderFrom='PROPERTIES')
+        return{'FINISHED'}
+
+@register_wrap
 class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
     bl_idname = "POSE_ARMATURE_PT_csp_panel"
     bl_label = "CSP Tools"
@@ -1442,10 +1453,20 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
         the user can't just do Alt-R/G/S to get back to the T-Pose. The operators below
         are the recreated functionality. (3DView->Tools->Animation->BrawlCrate->Clear)
         '''
+
+@register_wrap
+class ARMATURES_PT_panel(bpy.types.Panel):
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Tool"
+    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_idname = "ARMATURES_PT_panel"
+    bl_label = "Armatures"
+    
+    def draw(self, context):
         layout = self.layout.column(align=True)
         scene = bpy.context.scene
 
-        layout.label(text='Armatures:')
         row = layout.column(align = True)
         row.prop_search(
             scene, 'armature', bpy.data, "objects", text='Main', icon='ARMATURE_DATA' 
@@ -1453,23 +1474,46 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
         row.prop_search(
             scene, 'proxy', bpy.data, "objects", text='Proxy', icon='ARMATURE_DATA' 
         )
+
+@register_wrap
+class IMPORT_PT_panel(bpy.types.Panel):
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Tool"
+    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_options = {"DEFAULT_CLOSED"}
+    bl_idname = "IMPORT_PT_panel"
+    bl_label = "Import"
+    
+    def draw(self, context):
+        layout = self.layout.column(align=True)
+        scene = bpy.context.scene
         
-        layout.row().separator()
-        layout.label(text='Import:')
-        row = layout.row(align=True)
-        op = row.operator(IMAGE_OT_reload_textures.bl_idname,text='Reload Textures')
         row = layout.row(align=True)
         op = row.operator(OBJECT_OT_brawlcrate_fbx_import.bl_idname,text='FBX')
         op = row.operator(OBJECT_OT_brawlcrate_collada_import.bl_idname,text='DAE')
         op = row.operator(POSE_OT_brawlcrate_anim_import.bl_idname,text='ANIM')
-
+        
         layout.row().separator()
         layout.row().separator()
         row = layout.column(align=True)
         op = row.operator(DATA_OT_csp_init_polish_setup.bl_idname,text='Setup for Manual Polish')
         op = row.operator(OBJECT_OT_csp_set_object_mods.bl_idname,text='Apply Default Mods')
+
+@register_wrap
+class POLISH_PT_panel(bpy.types.Panel):
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Tool"
+    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_options = {"DEFAULT_CLOSED"}
+    bl_idname = "POLISH_PT_panel"
+    bl_label = "Polish"
+    
+    def draw(self, context):
+        layout = self.layout.column(align=True)
+        scene = bpy.context.scene
         
-        layout.label(text='Polish:')
         row = layout.row(align=True)
         op = row.operator(DATA_OT_csp_toggle_simplify.bl_idname,text='Toggle Simplify')
         layout.row().separator()
@@ -1477,7 +1521,7 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
         box = layout.box()
         box.label(text='Edge Operations:')
         box.label(text='Crease:')
-        row = box.row(align=True)
+        row = box.row(align=True,heading="Crease:")
         op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.0')
         op.crease_value = 0.0
         op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.3')
@@ -1495,8 +1539,20 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
         op = row.operator(MESH_OT_csp_sharp.bl_idname,text='Remove')
         op.clear_sharp = True
 
-        layout.row().separator()
-        layout.label(text='Posing:')
+@register_wrap
+class POSING_PT_panel(bpy.types.Panel):
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Tool"
+    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_options = {"DEFAULT_CLOSED"}
+    bl_idname = "POSING_PT_panel"
+    bl_label = "Posing"
+    
+    def draw(self, context):
+        layout = self.layout.column(align=True)
+        scene = bpy.context.scene
+        
         column = layout.column(align=True)
         op = column.operator(OBJECT_OT_csp_toggle_proxy.bl_idname,text='Toggle Proxy')
         op = column.operator(POSE_ARMATURE_OT_clear_to_bind.bl_idname,text='Reset Proxy')
@@ -1504,10 +1560,34 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
         op.clear_rotation=True
         op.clear_scale=True
 
+@register_wrap
+class UTILITY_PT_panel(bpy.types.Panel):
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Tool"
+    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_options = {"DEFAULT_CLOSED"}
+    bl_idname = "UTILITY_PT_panel"
+    bl_label = "Utility"
+    
+    def draw(self, context):
+        layout = self.layout.column(align=True)
+        scene = bpy.context.scene
+
         layout.row().separator()
-        layout.label(text='Utility:')
         row = layout.row(align=True)
         op = row.operator(DATA_OT_csp_purge.bl_idname,text='Clean Unused Data')
+        
+        layout.row().separator()
+        layout.row().separator()
+        row = layout.row(align=True)
+        op = row.operator(IMAGE_OT_reload_textures.bl_idname,text='Reload Textures')
+        
+        if hasattr(bpy.types, "MYBIGBUTTONTAB_PT_MyBigButton"):
+            layout.row().separator()
+            layout.row().separator()
+            column = layout.column(align=True)
+            op = column.operator(IMAGE_OT_reload_and_render.bl_idname,text="Render Current Camera")
 
 #-----------------------------------------
 
