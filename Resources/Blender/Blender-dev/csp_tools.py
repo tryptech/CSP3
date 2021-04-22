@@ -8,12 +8,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
 bl_info = {
-    "name": "CSP Tools",
+    "name": "Brawl Rendering Toolkit",
     "author": "tryptech, Wayde Brandon Moss",
-    "version": (1, 0, 5),
+    "version": (1, 0, 6),
     "blender": (2, 81, 0),
     "location": "View3D > Sidebar > Tool",
-    "description": "Convenient Tools for CSP workflow",
+    "description": "Super Smash Bros. Brawl Rendering Tools and Shortcuts",
     "category": "Import-Export"}
 
 '''
@@ -33,7 +33,7 @@ from math import atan2, ceil, cos, degrees, floor, isclose, pi, radians, sin,tan
 import bpy
 import bmesh
 from bpy.props import BoolProperty, EnumProperty, IntProperty, StringProperty,CollectionProperty
-from bpy.types import Operator, OperatorFileListElement, Scene
+from bpy.types import PropertyGroup, Operator, OperatorFileListElement, Scene
 from bpy_extras.io_utils import ExportHelper, ImportHelper
 from mathutils import Euler, Matrix, Quaternion, Vector
 
@@ -1009,6 +1009,7 @@ class OBJECT_OT_brawlcrate_fbx_import(Operator, ImportHelper):
 
     bl_idname = "brawlcrate.fbx_import"
     bl_label = "BrawlCrate FBX Import"
+    bl_options = {'REGISTER', 'UNDO'}
 
     filename_ext = '.fbx'
 
@@ -1070,6 +1071,7 @@ class OBJECT_OT_brawlcrate_collada_import(Operator, ImportHelper):
 
     bl_idname = "brawlcrate.collada_import"
     bl_label = "BrawlCrate Collada Import"
+    bl_options = {'REGISTER', 'UNDO'}
 
     # ExportHelper mixin class uses this
     filename_ext = '.dae'
@@ -1175,6 +1177,7 @@ class OBJECT_OT_brawlcrate_collada_import(Operator, ImportHelper):
 class POSE_OT_brawlcrate_anim_import(Operator, ImportHelper):
     bl_idname = "brawlcrate.anim_import"
     bl_label = "BrawlCrate .Anim Import"
+    bl_options = {'REGISTER', 'UNDO'}
     
     files : CollectionProperty(
         name="File Path",
@@ -1213,9 +1216,10 @@ class POSE_OT_brawlcrate_anim_import(Operator, ImportHelper):
         return {'FINISHED'}
 
 @register_wrap
-class DATA_OT_csp_init_polish_setup(bpy.types.Operator):
-    bl_idname = "csp.setup"
+class DATA_OT_brt_init_polish_setup(bpy.types.Operator):
+    bl_idname = "brt.setup"
     bl_label = "Setup FBX and DAE for polish"
+    bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
     def poll(cls, context):    
@@ -1242,9 +1246,10 @@ class DATA_OT_csp_init_polish_setup(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class OBJECT_OT_csp_set_object_mods(bpy.types.Operator):
-    bl_idname = "csp.mod"
+class OBJECT_OT_brt_set_object_mods(bpy.types.Operator):
+    bl_idname = "brt.mod"
     bl_label = "Apply Default Modifiers to Mesh Object"
+    bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
     def poll(cls, context):
@@ -1264,9 +1269,10 @@ class OBJECT_OT_csp_set_object_mods(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class DATA_OT_csp_toggle_simplify(bpy.types.Operator):
-    bl_idname = "csp.toggle_simp"
+class DATA_OT_brt_toggle_simplify(bpy.types.Operator):
+    bl_idname = "brt.toggle_simp"
     bl_label = "Toggle Viewport Simplify between on and off"
+    bl_options = {'REGISTER', 'UNDO'}
     
     @classmethod
     def poll(cls, context):
@@ -1280,21 +1286,10 @@ class DATA_OT_csp_toggle_simplify(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class MESH_OT_csp_crease_label(bpy.types.Operator):
-    bl_idname = "csp.crease_label"
+class MESH_OT_brt_crease(bpy.types.Operator):
+    bl_idname = "brt.crease"
     bl_label = "Crease Edge"
-
-    @classmethod
-    def poll(cls, context):
-        return False
-    
-    def execute(self, context):
-        return {'FINISHED'}
-
-@register_wrap
-class MESH_OT_csp_crease(bpy.types.Operator):
-    bl_idname = "csp.crease"
-    bl_label = "Crease Edge"
+    bl_options = {'REGISTER', 'UNDO'}
 
     crease_value : bpy.props.FloatProperty(name='Crease',default = 0.0)
 
@@ -1321,9 +1316,10 @@ class MESH_OT_csp_crease(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class MESH_OT_csp_sharp(bpy.types.Operator):
-    bl_idname = "csp.sharp"
+class MESH_OT_brt_sharp(bpy.types.Operator):
+    bl_idname = "brt.sharp"
     bl_label = "Toggle Edge Crease"
+    bl_options = {'REGISTER', 'UNDO'}
 
     clear_sharp : BoolProperty(name='Sharp',default=False)
 
@@ -1346,9 +1342,10 @@ class MESH_OT_csp_sharp(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class OBJECT_OT_csp_toggle_proxy(bpy.types.Operator):
-    bl_idname = "csp.toggle_proxy"
+class OBJECT_OT_brt_toggle_proxy(bpy.types.Operator):
+    bl_idname = "brt.toggle_proxy"
     bl_label = "Toggle use of proxy armature"
+    bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
     def poll(cls, context):
@@ -1410,7 +1407,7 @@ class POSE_ARMATURE_OT_clear_to_bind(bpy.types.Operator):
 
 @register_wrap
 class IMAGE_OT_reload_textures(bpy.types.Operator):
-    bl_idname = "csp.reload_textures"
+    bl_idname = "brt.reload_textures"
     bl_label = "Reload all texture images"
     
     def execute(self, context):
@@ -1418,8 +1415,8 @@ class IMAGE_OT_reload_textures(bpy.types.Operator):
         return {'FINISHED'}
 
 @register_wrap
-class DATA_OT_csp_purge(bpy.types.Operator):
-    bl_idname = "csp.purge"
+class DATA_OT_brt_purge(bpy.types.Operator):
+    bl_idname = "brt.purge"
     bl_label = "Purge Un-used data"
 
     def execute(self, context):
@@ -1428,7 +1425,7 @@ class DATA_OT_csp_purge(bpy.types.Operator):
 
 @register_wrap
 class IMAGE_OT_reload_and_render(bpy.types.Operator):
-    bl_idname = "csp.reload_and_render"
+    bl_idname = "brt.reload_and_render"
     bl_label = "Reload all textures and render"
     
     def execute(self,context):
@@ -1436,14 +1433,97 @@ class IMAGE_OT_reload_and_render(bpy.types.Operator):
         if hasattr(bpy.types, "MYBIGBUTTONTAB_PT_MyBigButton"):
             bpy.ops.cameramanager.render_scene_camera(renderFrom='PROPERTIES')
         return{'FINISHED'}
+        
+@register_wrap
+class IMAGE_OT_reload_and_render_all(bpy.types.Operator):
+    bl_idname = "brt.reload_and_render_all"
+    bl_label = "Reload all textures and render all cameras"
+    
+    def execute(self,context):
+        update_images();
+        if hasattr(bpy.types, "MYBIGBUTTONTAB_PT_MyBigButton"):
+            bpy.ops.cameramanager.render_scene_camera(renderFrom='PROPERTIES')
+        return{'FINISHED'}
+
+#-----------------------------------------
 
 @register_wrap
-class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
-    bl_idname = "POSE_ARMATURE_PT_csp_panel"
-    bl_label = "CSP Tools"
+class creasePG(PropertyGroup):
+
+    @classmethod
+    def poll(cls, context):
+        current_mode = bpy.context.mode
+        if current_mode == 'EDIT_MESH':
+            return True
+        else:
+            return False
+    
+    def update_edgeCrease( self, context ):
+            ''' Update function for edgeCrease property '''
+    
+            o  = bpy.context.object
+            d  = o.data
+            bm = bmesh.from_edit_mesh( d )
+    
+            #creaseLayer = bm.edges.layers.crease['SubSurfCrease']
+            creaseLayer = bm.edges.layers.crease.verify()
+    
+            if self.whoToInfluence == 'Selected Elements':
+                selectedEdges = [ e for e in bm.edges if e.select ]
+                for e in selectedEdges: e[ creaseLayer ] = self.edgeCrease
+            else:
+                for e in bm.edges: e[ creaseLayer ] = self.edgeCrease
+    
+            bmesh.update_edit_mesh( d )
+    
+    items = [
+        ('All', 'All', ''),
+        ('Selected Elements', 'Selected Elements', '')
+    ]
+
+    whoToInfluence = bpy.props.EnumProperty( # Material distribution method
+        description = "Influence all / selection",
+        name        = "whoToInfluence",
+        items       = items,
+        default     = 'Selected Elements'
+    )
+
+    edgeCrease = bpy.props.FloatProperty(
+        description = "Edge Crease",
+        name        = "Edge Crease",
+        min         = 0.0,
+        max         = 1.0,
+        soft_min    = 0.0,
+        soft_max    = 1.0,
+        step        = 1,
+        default     = 0,
+        update      = update_edgeCrease
+    )
+    
+    def get_crease_selected():
+        o  = bpy.context.object
+        d  = o.data
+        bm = bmesh.from_edit_mesh( d )
+    
+        creaseLayer = bm.edges.layers.crease.verify()
+    
+        selectedEdges = ""
+        for e in bm.edges:
+            if e.select:
+                selectedEdges += (str(round(e[ creaseLayer ], 2)) + ' ')
+        return selectedEdges
+
+    
+
+#-----------------------------------------
+
+@register_wrap
+class POSE_ARMATURE_PT_brt_panel(bpy.types.Panel):
+    bl_idname = "POSE_ARMATURE_PT_brt_panel"
+    bl_label = "Brawl Rendering Toolkit"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
+    bl_category = "BRT"
 
     
     def draw(self,context):
@@ -1458,8 +1538,8 @@ class POSE_ARMATURE_PT_csp_panel(bpy.types.Panel):
 class ARMATURES_PT_panel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
-    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_category = "BRT"
+    bl_parent_id = "POSE_ARMATURE_PT_brt_panel"
     bl_idname = "ARMATURES_PT_panel"
     bl_label = "Armatures"
     
@@ -1479,8 +1559,8 @@ class ARMATURES_PT_panel(bpy.types.Panel):
 class IMPORT_PT_panel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
-    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_category = "BRT"
+    bl_parent_id = "POSE_ARMATURE_PT_brt_panel"
     bl_options = {"DEFAULT_CLOSED"}
     bl_idname = "IMPORT_PT_panel"
     bl_label = "Import"
@@ -1497,15 +1577,15 @@ class IMPORT_PT_panel(bpy.types.Panel):
         layout.row().separator()
         layout.row().separator()
         row = layout.column(align=True)
-        op = row.operator(DATA_OT_csp_init_polish_setup.bl_idname,text='Setup for Manual Polish')
-        op = row.operator(OBJECT_OT_csp_set_object_mods.bl_idname,text='Apply Default Mods')
+        op = row.operator(DATA_OT_brt_init_polish_setup.bl_idname,text='Setup for Manual Polish',icon='SPHERE')
+        op = row.operator(OBJECT_OT_brt_set_object_mods.bl_idname,text='Apply Default Modfiers',icon='MODIFIER')
 
 @register_wrap
 class POLISH_PT_panel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
-    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_category = "BRT"
+    bl_parent_id = "POSE_ARMATURE_PT_brt_panel"
     bl_options = {"DEFAULT_CLOSED"}
     bl_idname = "POLISH_PT_panel"
     bl_label = "Polish"
@@ -1513,38 +1593,40 @@ class POLISH_PT_panel(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout.column(align=True)
         scene = bpy.context.scene
+        props = context.scene.creasePG
         
         row = layout.row(align=True)
-        op = row.operator(DATA_OT_csp_toggle_simplify.bl_idname,text='Toggle Simplify')
+        op = row.operator(DATA_OT_brt_toggle_simplify.bl_idname,text='Toggle Simplify',icon='MOD_SIMPLIFY')
         layout.row().separator()
         layout.row().separator()
         box = layout.box()
         box.label(text='Edge Operations:')
-        box.label(text='Crease:')
-        row = box.row(align=True,heading="Crease:")
-        op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.0')
+        col = box.column(align=True)
+        col.prop(props, "edgeCrease")
+        row = col.row(align=True,heading="Crease")
+        op = row.operator(MESH_OT_brt_crease.bl_idname,text='0.0')
         op.crease_value = 0.0
-        op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.3')
+        op = row.operator(MESH_OT_brt_crease.bl_idname,text='0.3')
         op.crease_value = 0.3
-        op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.5')
+        op = row.operator(MESH_OT_brt_crease.bl_idname,text='0.5')
         op.crease_value = 0.5
-        op = row.operator(MESH_OT_csp_crease.bl_idname,text='0.7')
+        op = row.operator(MESH_OT_brt_crease.bl_idname,text='0.7')
         op.crease_value = 0.7
-        op = row.operator(MESH_OT_csp_crease.bl_idname,text='1.0')
+        op = row.operator(MESH_OT_brt_crease.bl_idname,text='1.0')
         op.crease_value = 1.0
         box.label(text='Sharp:')
         row = box.row(align=True)
-        op = row.operator(MESH_OT_csp_sharp.bl_idname,text='Mark')
+        op = row.operator(MESH_OT_brt_sharp.bl_idname,text='Mark')
         op.clear_sharp = False
-        op = row.operator(MESH_OT_csp_sharp.bl_idname,text='Remove')
+        op = row.operator(MESH_OT_brt_sharp.bl_idname,text='Remove')
         op.clear_sharp = True
 
 @register_wrap
 class POSING_PT_panel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
-    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_category = "BRT"
+    bl_parent_id = "POSE_ARMATURE_PT_brt_panel"
     bl_options = {"DEFAULT_CLOSED"}
     bl_idname = "POSING_PT_panel"
     bl_label = "Posing"
@@ -1554,7 +1636,7 @@ class POSING_PT_panel(bpy.types.Panel):
         scene = bpy.context.scene
         
         column = layout.column(align=True)
-        op = column.operator(OBJECT_OT_csp_toggle_proxy.bl_idname,text='Toggle Proxy')
+        op = column.operator(OBJECT_OT_brt_toggle_proxy.bl_idname,text='Toggle Proxy')
         op = column.operator(POSE_ARMATURE_OT_clear_to_bind.bl_idname,text='Reset Proxy')
         op.clear_location=True
         op.clear_rotation=True
@@ -1564,8 +1646,8 @@ class POSING_PT_panel(bpy.types.Panel):
 class UTILITY_PT_panel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Tool"
-    bl_parent_id = "POSE_ARMATURE_PT_csp_panel"
+    bl_category = "BRT"
+    bl_parent_id = "POSE_ARMATURE_PT_brt_panel"
     bl_options = {"DEFAULT_CLOSED"}
     bl_idname = "UTILITY_PT_panel"
     bl_label = "Utility"
@@ -1576,18 +1658,19 @@ class UTILITY_PT_panel(bpy.types.Panel):
 
         layout.row().separator()
         row = layout.row(align=True)
-        op = row.operator(DATA_OT_csp_purge.bl_idname,text='Clean Unused Data')
+        op = row.operator(DATA_OT_brt_purge.bl_idname,text='Clean Unused Data',icon='TRASH')
         
         layout.row().separator()
         layout.row().separator()
         row = layout.row(align=True)
-        op = row.operator(IMAGE_OT_reload_textures.bl_idname,text='Reload Textures')
+        op = row.operator(IMAGE_OT_reload_textures.bl_idname,text='Reload Textures',icon='FILE_REFRESH')
         
         if hasattr(bpy.types, "MYBIGBUTTONTAB_PT_MyBigButton"):
             layout.row().separator()
             layout.row().separator()
             column = layout.column(align=True)
-            op = column.operator(IMAGE_OT_reload_and_render.bl_idname,text="Render Current Camera")
+            op = column.operator(IMAGE_OT_reload_and_render.bl_idname,text="Render Current Camera", icon='OUTLINER_OB_IMAGE')
+            op = column.operator(IMAGE_OT_reload_and_render_all.bl_idname,text="Render All Cameras", icon='RENDER_RESULT')
 
 #-----------------------------------------
 
@@ -1600,6 +1683,8 @@ def register():
     for cls in __bl_classes:
         register_class(cls)
             
+    bpy.types.Scene.creasePG = bpy.props.PointerProperty( type = creasePG )
+
     bpy.types.TOPBAR_MT_file_import.append(menu_func_import)
     
 def unregister():
