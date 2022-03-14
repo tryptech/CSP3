@@ -1,0 +1,8 @@
+Model scale: 
+X: 0.200
+Y: 0.200
+Z: 0.200
+
+Note: The alternate blend switches the positions of each climber. Nana in the front, and Popo in the back. However the PopoTex_stocks file is used for the stock fur on both blends. If you want them to switch positions or to have Nana as the stock use the alternate blend.
+
+This alternate blend is used on stocks for Ice Climbers 2, 5, and 6.

@@ -1,0 +1,9 @@
+Model scale: 
+X: 0.250
+Y: 0.250
+Z: 0.250
+
+Model rotation: 
+X: 90
+Y: 0
+Z: -2.94512

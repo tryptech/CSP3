@@ -1,0 +1,14 @@
+Model scale: 
+X: 0.160
+Y: 0.160
+Z: 0.160
+
+Left eye iris location:
+X: -0.50
+Y: 0.030
+Z: 0.000
+
+Right eye iris location:
+X: 0.100
+Y: 0.030
+Z: 0.000 

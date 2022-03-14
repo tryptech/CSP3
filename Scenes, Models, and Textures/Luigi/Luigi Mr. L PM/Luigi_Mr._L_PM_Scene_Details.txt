@@ -1,6 +1,0 @@
-Model scale:
-X: 0.200
-Y: 0.200
-Z: 0.200
-
-I've applied a Subdivision Surface modifier to Lui-- erm, Mr. L's hat, torso, gloves, and stache.

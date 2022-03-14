@@ -1,0 +1,26 @@
+Model scale: 
+X: 0.200
+Y: 0.200
+Z: 0.200
+
+Red Pikmin color: 840821
+
+Yellow Pikmin color: FFD200
+
+Blue Pikmin color: 002094
+
+Default helmet color: A9A66E
+
+Red helmet color: E7A3B0
+
+Green helmet color: A6E7A2
+
+Blue helmet color: A3DAE7
+
+White helmet color: E7E7E7
+
+Yellow helmet color: A9A66E
+
+Tan helmet color: 8F9964
+
+Purple helmet color: E0ACE7
