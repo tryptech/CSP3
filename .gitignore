@@ -1,7 +1,5 @@
-*.mdl0
-*.plt0
+
 *.blend1
-*.pac
-*.pcs
 desktop.ini
-progress.xlsx
+*.plt0
+*.mdl0
