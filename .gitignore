@@ -6,3 +6,4 @@ desktop.ini
 bfg-1.14.0.jar
 progress.xlsx
 push_commits_by_chunks.sh
+test_*
