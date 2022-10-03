@@ -9,3 +9,4 @@ push_commits_by_chunks.sh
 test_*
 Scenes/*/*/*.png
 Scenes/**/render
+/*.*
